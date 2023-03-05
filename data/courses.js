@@ -37,26 +37,13 @@ function readCSE() {
 }
 
 function createBox() {
-  const classContainer = document.getElementById("class-container");
-  // Loop through the classes array and create a box for each class
-  for (let i = 0; i < courses.length; i++) {
-    // Create a new div element for the class box
-    const classBox = document.createElement("div");
-    classBox.classList.add("class-box");
-
-    // Create a heading element for the class code
-    const codeHeading = document.createElement("h2");
-    codeHeading.textContent = courses[i].title;
-
-    // Create a paragraph element for the class credits
-    const creditsPara = document.createElement("p");
-    creditsPara.textContent = `Credits: ${courses[i].credits}`;
-
-    // Append the heading and paragraph elements to the class box
-    classBox.appendChild(codeHeading);
-    classBox.appendChild(creditsPara);
-
-    // Append the class box to the class container element
-    classContainer.appendChild(classBox);
-  }
+  readFile().catch((error) => console.error(error));
+  const container = document.getElementById("container");
+  courses.forEach((item) => {
+    const box = document.createElement("div");
+    box.classList.add("box");
+    box.innerText = item.title;
+    box.innerText = item.credits;
+    container.appendChild(box);
+  });
 }
