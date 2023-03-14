@@ -7,7 +7,23 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 0
+    "level": 1,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Fall"
+  },
+  {
+    "title": "BZX 002",
+    "description": "Student to Professional Co-Curriculum Tier 2",
+    "credits": 0,
+    "designation": "BZX",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 1,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Spring"
   },
   {
     "title": "ECO 001",
@@ -17,7 +33,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 0
+    "level": 1,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "ACCT 151",
@@ -27,7 +46,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 1
+    "level": 2,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "ACCT 152",
@@ -37,17 +59,23 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 2
+    "level": 2.5,
+    "prereqs": "ACCT 151",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
-    "title": "ECO 146",
-    "description": "Intermediate Macroeconomic Analysis",
+    "title": "ECO 119/146",
+    "description": "Intermediate Micro/Macroeconomic Analysis",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 1
+    "level": 3,
+    "prereqs": ["ECO 001", "MATH 021"],
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "FIN 125",
@@ -57,7 +85,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 1
+    "level": 3,
+    "prereqs": ["ECO 001", "MATH 021", "ECO 045/MATH 231"],
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "LAW 201",
@@ -67,7 +98,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 1
+    "level": 3,
+    "prereqs": "ECO 001",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "SCM 186",
@@ -77,7 +111,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 1
+    "level": 3,
+    "prereqs": ["MATH 021", "ECO 045/MATH 231"],
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "MGT 043",
@@ -87,17 +124,32 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 0
+    "level": 1,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "MGT 301",
     "description": "Strategic Management in a Global Environment",
-    "credits": 3,
+    "credits": 4,
     "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 3
+    "level": 3,
+    "prereqs": [
+      "CSB 312",
+      "ECO 119/146",
+      "SCM 186",
+      "LAW 201",
+      "FIN 125",
+      "MGT 043",
+      "MKT 111",
+      "BUS 203"
+    ],
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "MKT 111",
@@ -107,7 +159,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 1
+    "level": 3,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "ECO 045/MATH 231",
@@ -117,7 +172,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 0
+    "level": 1,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "BUS 003",
@@ -127,7 +185,10 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 0
+    "level": 1,
+    "prereqs": "N/A",
+    "coreqs": "N/A",
+    "offered": "Both"
   },
   {
     "title": "BUS 203",
@@ -137,6 +198,9 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 3
+    "level": 3,
+    "prereqs": "BUS 003",
+    "coreqs": "N/A",
+    "offered": "Both"
   }
 ]

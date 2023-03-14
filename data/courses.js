@@ -1,4 +1,4 @@
-import course from "./course.js";
+import Course from "./Course.js";
 
 const courses = [];
 // Read Courses
@@ -11,9 +11,9 @@ function readBUS() {
   fetch("data/bus_courses.json")
     .then((response) => response.json())
     .then((data) => {
-      for (let i = courses.legth; i < data.length + courses.length; i++) {
-        courses.push(data[i].title);
-        courses[i].credits = data[i].credits;
+      for (let i = courses.legth; i < data.length; i++) {
+        const tmpCourse = new Course();
+        courses.push(tmpCourse);
       }
     });
 }
@@ -21,9 +21,9 @@ function readMATH() {
   fetch("data/MATH_courses.json")
     .then((response) => response.json())
     .then((data) => {
-      for (let i = courses.legth; i < data.length + courses.length; i++) {
-        courses.push(data[i].title);
-        courses[i].credits = data[i].credits;
+      for (let i = courses.legth; i < data.length; i++) {
+        const tmpCourse = new Course();
+        courses.push(tmpCourse);
       }
     });
 }
@@ -31,9 +31,9 @@ function readCSE() {
   fetch("data/cse_courses.json")
     .then((response) => response.json())
     .then((data) => {
-      for (let i = courses.legth; i < data.length + courses.length; i++) {
-        courses.push(data[i].title);
-        courses[i].credits = data[i].credits;
+      for (let i = courses.legth; i < data.length; i++) {
+        const tmpCourse = new Course();
+        courses.push(tmpCourse);
       }
     });
 }
