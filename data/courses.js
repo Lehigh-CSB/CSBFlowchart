@@ -1,3 +1,5 @@
+import course from "./course.js";
+
 const courses = [];
 // Read Courses
 function readFile() {
