@@ -22,7 +22,19 @@ function readMATH() {
     .then((response) => response.json())
     .then((data) => {
       for (let i = courses.legth; i < data.length; i++) {
-        const tmpCourse = new Course();
+        const tmpCourse = new Course(
+          "title",
+          "description",
+          0,
+          "designation",
+          false,
+          false,
+          "grade",
+          1,
+          "prereqs",
+          "coreqs",
+          "offered"
+        );
         courses.push(tmpCourse);
       }
     });
@@ -49,3 +61,5 @@ function createBox() {
     container.appendChild(box);
   });
 }
+
+export default courses;
