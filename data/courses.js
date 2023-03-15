@@ -3,22 +3,12 @@ import Course from "./Course.js";
 const courses = [];
 // Read Courses
 function readFile() {
-  readBUS();
-  readMATH();
-  readCSE();
+  read("data/MATH_courses.json");
+  read("data/cse_courses.json");
+  read("data/bus_courses.json");
 }
-function readBUS() {
-  fetch("data/bus_courses.json")
-    .then((response) => response.json())
-    .then((data) => {
-      for (let i = courses.legth; i < data.length; i++) {
-        const tmpCourse = new Course();
-        courses.push(tmpCourse);
-      }
-    });
-}
-function readMATH() {
-  fetch("data/MATH_courses.json")
+function read(path) {
+  fetch(path)
     .then((response) => response.json())
     .then((data) => {
       for (let i = courses.legth; i < data.length; i++) {
@@ -39,17 +29,6 @@ function readMATH() {
       }
     });
 }
-function readCSE() {
-  fetch("data/cse_courses.json")
-    .then((response) => response.json())
-    .then((data) => {
-      for (let i = courses.legth; i < data.length; i++) {
-        const tmpCourse = new Course();
-        courses.push(tmpCourse);
-      }
-    });
-}
-
 function createBox() {
   readFile().catch((error) => console.error(error));
   const container = document.getElementById("container");
