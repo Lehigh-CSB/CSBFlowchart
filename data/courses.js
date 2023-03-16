@@ -22,7 +22,7 @@ var courses = []; // stores course objects
   no return value
 */
 function read(path) {
-  fetch("http://localhost:5500/data/" + path)
+  fetch("http://localhost:5501/data/" + path)
     .then((response) => response.json())
     .then((data) => {
       data.forEach((item) => {
@@ -46,16 +46,5 @@ function read(path) {
 }
 
 console.log(courses);
-
-// function createBox() {
-//   const container = document.getElementById("container");
-//   courses.forEach((item) => {
-//     const box = document.createElement("div");
-//     box.classList.add("box");
-//     box.innerText = item.title;
-//     box.innerText = item.credits;
-//     container.appendChild(box);
-//   });
-// }
 
 export default courses;
