@@ -44,7 +44,4 @@ function read(path) {
       });
     });
 }
-
-console.log(courses);
-
 export default courses;
