@@ -8,7 +8,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Fall"
   },
@@ -21,7 +21,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Spring"
   },
@@ -34,7 +34,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -47,7 +47,7 @@
     "used": false,
     "grade": "N/A",
     "level": 2,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -60,7 +60,7 @@
     "used": false,
     "grade": "N/A",
     "level": 2.5,
-    "prereqs": "ACCT 151",
+    "prereqs": ["ACCT 151"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -99,7 +99,7 @@
     "used": false,
     "grade": "N/A",
     "level": 3,
-    "prereqs": "ECO 001",
+    "prereqs": ["ECO 001"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -125,7 +125,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -160,7 +160,7 @@
     "used": false,
     "grade": "N/A",
     "level": 3,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -173,7 +173,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -186,7 +186,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -199,7 +199,7 @@
     "used": false,
     "grade": "N/A",
     "level": 3,
-    "prereqs": "BUS 003",
+    "prereqs": ["BUS 003"],
     "coreqs": "N/A",
     "offered": "Both"
   }

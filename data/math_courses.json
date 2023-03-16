@@ -8,7 +8,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": "N/A",
+    "prereqs": ["N/A"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -21,7 +21,7 @@
     "used": false,
     "grade": "N/A",
     "level": 1.5,
-    "prereqs": "MATH 021",
+    "prereqs": ["MATH 021"],
     "coreqs": "N/A",
     "offered": "Both"
   },
@@ -34,7 +34,7 @@
     "used": false,
     "grade": "N/A",
     "level": 2,
-    "prereqs": "MATH 022",
+    "prereqs": ["MATH 022"],
     "coreqs": "N/A",
     "offered": "Both"
   }

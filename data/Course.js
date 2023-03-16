@@ -8,8 +8,8 @@ class Course {
     used, // boolean
     grade, // String
     level, // int
-    prereqs, // String/array
-    coreqs, // String/array
+    prereqs, // array
+    coreqs, // String
     offered // String
   ) {
     this.title = title;
