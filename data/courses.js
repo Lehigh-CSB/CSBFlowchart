@@ -1,44 +1,61 @@
 import Course from "./Course.js";
+/*
+  This file is used to read the json files and create the course objects
+  The objects are stored in an array called courses
 
-const courses = [];
-// Read Courses
-function readFile() {
-  read("data/MATH_courses.json");
-  read("data/cse_courses.json");
-  read("data/bus_courses.json");
-}
+*/
+var courses = []; // stores course objects
+
+/*
+  Immediately Invoked Function to read the json files
+  no return value
+*/
+(function readFile() {
+  read("math_courses.json");
+  read("cse_courses.json");
+  read("bus_courses.json");
+})();
+
+/*
+  Helper function to read the json files. It creates the course objects and stores them in the courses array
+  @param  path: the path to the json file
+  no return value
+*/
 function read(path) {
-  fetch(path)
+  fetch("http://localhost:5500/data/" + path)
     .then((response) => response.json())
     .then((data) => {
-      for (let i = courses.legth; i < data.length; i++) {
-        const tmpCourse = new Course(
-          "title",
-          "description",
-          0,
-          "designation",
-          false,
-          false,
-          "grade",
-          1,
-          "prereqs",
-          "coreqs",
-          "offered"
+      data.forEach((item) => {
+        courses.push(
+          new Course(
+            item.title,
+            item.description,
+            item.credits,
+            item.designation,
+            item.completed,
+            item.used,
+            item.grade,
+            item.level,
+            item.prereqs,
+            item.coreqs,
+            item.offered
+          )
         );
-        courses.push(tmpCourse);
-      }
+      });
     });
 }
-function createBox() {
-  readFile().catch((error) => console.error(error));
-  const container = document.getElementById("container");
-  courses.forEach((item) => {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    box.innerText = item.title;
-    box.innerText = item.credits;
-    container.appendChild(box);
-  });
-}
+
+console.log(courses);
+
+// function createBox() {
+//   const container = document.getElementById("container");
+//   courses.forEach((item) => {
+//     const box = document.createElement("div");
+//     box.classList.add("box");
+//     box.innerText = item.title;
+//     box.innerText = item.credits;
+//     container.appendChild(box);
+//   });
+// }
 
 export default courses;
