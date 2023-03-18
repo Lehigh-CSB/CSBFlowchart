@@ -44,45 +44,4 @@ function read(path) {
       });
     });
 }
-var courses2 = [
-  new Course(
-    "MATH 021",
-    "Calculus I",
-    4,
-    "MATH",
-    false,
-    false,
-    "N/A",
-    1,
-    [],
-    "N/A",
-    "Both"
-  ),
-  new Course(
-    "MATH 022",
-    "Calculus II",
-    4,
-    "MATH",
-    false,
-    false,
-    "N/A",
-    1,
-    ["MATH 021"],
-    "N/A",
-    "Both"
-  ),
-  new Course(
-    "MATH 205",
-    "Lin Alg",
-    4,
-    "MATH",
-    false,
-    false,
-    "N/A",
-    2,
-    ["MATH 022"],
-    "N/A",
-    "Both"
-  ),
-];
 export default courses;

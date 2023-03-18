@@ -1,6 +1,46 @@
 import courses from "../data/courses.js";
 
-const course = ["HELLO", "TEST", "TEST2", "TEST3"]; // for some reason courses ARRAY is not working properly
+const course = [
+  new Course(
+    "MATH 021",
+    "Calculus I",
+    4,
+    "MATH",
+    false,
+    false,
+    "N/A",
+    1,
+    [],
+    "N/A",
+    "Both"
+  ),
+  new Course(
+    "MATH 022",
+    "Calculus II",
+    4,
+    "MATH",
+    false,
+    false,
+    "N/A",
+    1,
+    ["MATH 021"],
+    "N/A",
+    "Both"
+  ),
+  new Course(
+    "MATH 205",
+    "Lin Alg",
+    4,
+    "MATH",
+    false,
+    false,
+    "N/A",
+    2,
+    ["MATH 022"],
+    "N/A",
+    "Both"
+  ),
+]; // for some reason courses ARRAY is not working properly
 const grid = document.querySelector(".grid");
 
 /***
