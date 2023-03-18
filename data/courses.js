@@ -44,4 +44,5 @@ function read(path) {
       });
     });
 }
+
 export default courses;
