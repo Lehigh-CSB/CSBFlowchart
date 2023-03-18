@@ -6,7 +6,7 @@ import Course from "./Course.js";
 */
 var courses = []; // stores course objects
 
-/*
+/***
   Immediately Invoked Function to read the json files
   no return value
 */
@@ -16,7 +16,7 @@ var courses = []; // stores course objects
   read("bus_courses.json");
 })();
 
-/*
+/***
   Helper function to read the json files. It creates the course objects and stores them in the courses array
   @param  path: the path to the json file
   no return value
@@ -44,4 +44,45 @@ function read(path) {
       });
     });
 }
+var courses2 = [
+  new Course(
+    "MATH 021",
+    "Calculus I",
+    4,
+    "MATH",
+    false,
+    false,
+    "N/A",
+    1,
+    [],
+    "N/A",
+    "Both"
+  ),
+  new Course(
+    "MATH 022",
+    "Calculus II",
+    4,
+    "MATH",
+    false,
+    false,
+    "N/A",
+    1,
+    ["MATH 021"],
+    "N/A",
+    "Both"
+  ),
+  new Course(
+    "MATH 205",
+    "Lin Alg",
+    4,
+    "MATH",
+    false,
+    false,
+    "N/A",
+    2,
+    ["MATH 022"],
+    "N/A",
+    "Both"
+  ),
+];
 export default courses;
