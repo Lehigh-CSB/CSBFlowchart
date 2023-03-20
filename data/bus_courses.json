@@ -8,8 +8,8 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Fall"
   },
   {
@@ -21,8 +21,8 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Spring"
   },
   {
@@ -34,8 +34,8 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -47,8 +47,8 @@
     "used": false,
     "grade": "N/A",
     "level": 2,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -61,7 +61,7 @@
     "grade": "N/A",
     "level": 2.5,
     "prereqs": ["ACCT 151"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -74,7 +74,7 @@
     "grade": "N/A",
     "level": 3,
     "prereqs": ["ECO 001", "MATH 021"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -87,7 +87,7 @@
     "grade": "N/A",
     "level": 3,
     "prereqs": ["ECO 001", "MATH 021", "ECO 045/MATH 231"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -100,7 +100,7 @@
     "grade": "N/A",
     "level": 3,
     "prereqs": ["ECO 001"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -113,7 +113,7 @@
     "grade": "N/A",
     "level": 3,
     "prereqs": ["MATH 021", "ECO 045/MATH 231"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -125,8 +125,8 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -148,7 +148,7 @@
       "MKT 111",
       "BUS 203"
     ],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -160,8 +160,8 @@
     "used": false,
     "grade": "N/A",
     "level": 3,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -173,8 +173,8 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -186,8 +186,8 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -200,7 +200,7 @@
     "grade": "N/A",
     "level": 3,
     "prereqs": ["BUS 003"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   }
 ]

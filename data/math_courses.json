@@ -8,8 +8,8 @@
     "used": false,
     "grade": "N/A",
     "level": 1,
-    "prereqs": ["N/A"],
-    "coreqs": "N/A",
+    "prereqs": [],
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -22,7 +22,7 @@
     "grade": "N/A",
     "level": 1.5,
     "prereqs": ["MATH 021"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   },
   {
@@ -35,7 +35,7 @@
     "grade": "N/A",
     "level": 2,
     "prereqs": ["MATH 022"],
-    "coreqs": "N/A",
+    "coreqs": [],
     "offered": "Both"
   }
 ]
