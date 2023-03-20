@@ -12,6 +12,8 @@
 * [JavaScript](https://www.linkedin.com/learning/paths/become-a-javascript-developer?u=2222241)
 
 * [React](https://www.linkedin.com/learning/paths/explore-react-js-development?u=2222241)
+
+* [Manipulating DOM Elements](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model)
  
 #### Code Examples:
 * [Flowchart](https://www.jointjs.com/demos/flowchart)
