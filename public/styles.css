@@ -9,7 +9,11 @@ html, body {
   height: 100%;
   min-width: 100%;
   width: 100%;
+<<<<<<< HEAD
   background-color: rgb(255, 255, 255);
+=======
+  background-color: pink;
+>>>>>>> c6832e1 (render all courses)
 }
 
 .box {
