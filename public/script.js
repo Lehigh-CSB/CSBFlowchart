@@ -47,9 +47,59 @@ function renderCourses() {
       interactive: false
   });
 
-  let course = findCourseByTitle("CSE 007");
-  // create a rectangle for the course
-  createCourseBox(100, 30, course.title);
+  // for x-coordinate, the first one for that level is 100, the second one is 200, the third one is 300, etc.
+  let xCoordLevel1 = 100;
+  let xCoordLevel1_5 = 100;
+  let xCoordLevel2 = 100;
+  let xCoordLevel2_5 = 100;
+  let xCoordLevel3 = 100;
+  let xCoordLevel3_5 = 100;
+  let xCoordLevel4 = 100;
+
+  // traverse through array of courses and create a rectangle for each course
+  for (let i = 0; i < courses.length; i++) {
+    // createCourseBox(100, 30, courses[i].title);
+    // there are multiple levels of courses, render the y-coordinate of the rectangle based on the level
+    // level 1: 30, level 1.5: 45, level 2: 60, level 2.5: 75, level 3: 90, level 3.5: 105, level 4: 120
+    let yCoord;
+    if (courses[i].level === 1) {
+      yCoord = 50;
+      createCourseBox(xCoordLevel1, yCoord, courses[i].title);
+      // increment the x-coordinate for the next course at this level
+      xCoordLevel1 += 120;
+    } else if (courses[i].level === 1.5) {
+      yCoord = 150;
+      createCourseBox(xCoordLevel1_5, yCoord, courses[i].title);
+      // increment the x-coordinate for the next course at this level
+      xCoordLevel1_5 += 120;
+      createCourseBox(xCoordLevel1_5, yCoord, courses[i].title);
+    } else if (courses[i].level === 2) {
+      yCoord = 250;
+      createCourseBox(xCoordLevel2, yCoord, courses[i].title);
+      // increment the x-coordinate for the next course at this level
+      xCoordLevel2 += 120;
+    } else if (courses[i].level === 2.5) {
+      yCoord = 350;
+      createCourseBox(xCoordLevel2_5, yCoord, courses[i].title);
+      // increment the x-coordinate for the next course at this level
+      xCoordLevel2_5 += 120;
+    } else if (courses[i].level === 3) {
+      yCoord = 450;
+      createCourseBox(xCoordLevel3, yCoord, courses[i].title);
+      // increment the x-coordinate for the next course at this level
+      xCoordLevel3 += 120;
+    } else if (courses[i].level === 3.5) {
+      yCoord = 550;
+      createCourseBox(xCoordLevel3_5, yCoord, courses[i].title);
+      // increment the x-coordinate for the next course at this level
+      xCoordLevel3_5 += 120;
+    } else if (courses[i].level === 4) {
+      yCoord = 650;
+      createCourseBox(xCoordLevel4, yCoord, courses[i].title);
+      // increment the x-coordinate for the next course at this level
+      xCoordLevel4 += 120;
+    }
+  }
 }
 
 function findCourseByTitle(title) {
@@ -74,7 +124,21 @@ function createCourseBox(xCoord, yCoord, title) {
   });
   // Set the draggable attribute to false
   rect.attr('rect/draggable', false);
+  // Set custom attributes based on the course
+  let course = findCourseByTitle(title);
+  rect.prop('title', course.title);
+  rect.prop('description', course.description);
+  rect.prop('credits', course.credits);
+  rect.prop('designation', course.designation);
+  rect.prop('completed', course.prerequisites);
+  rect.prop('used', course.used);
+  rect.prop('grade', course.grade);
+  rect.prop('level', course.level);
+  rect.prop('prereqs', course.prerequisites);
+  rect.prop('coreqs', course.corequisites);
+  rect.prop('offered', course.offered);
   rect.addTo(graph);
+  // console.log(rect.toJSON()); // COMMENT OUT THIS LINE TO SEE THE ATTRIBUTES OF THE RECTANGLE
 }
 
 
