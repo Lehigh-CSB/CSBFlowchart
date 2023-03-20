@@ -140,4 +140,3 @@ function createCourseBox(xCoord, yCoord, title) {
   // console.log(rect.toJSON()); // COMMENT OUT THIS LINE TO SEE THE ATTRIBUTES OF THE RECTANGLE
 }
 
-
