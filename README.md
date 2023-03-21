@@ -12,7 +12,7 @@
 
 * [React](https://www.linkedin.com/learning/paths/explore-react-js-development?u=2222241)
 
-## STEPS FOR USING GIT:
+## Steps For Using Git
 #### TO DOWNLOAD:
 - Everytime you start working: "git pull"
     - it will make sure your branch is up to date with master
