@@ -24,6 +24,7 @@
 - in base folder, "node app.js" or "npm start"
 - in your browser: "locahost:3000"
 
+## Implementation Resources
 #### Code Examples:
 * [ JointJS Library - Flowchart Demo](https://www.jointjs.com/demos/flowchart)
 * [ JointJS Documentation](https://resources.jointjs.com/tutorial/introduction)
