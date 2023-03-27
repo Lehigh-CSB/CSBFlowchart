@@ -168,7 +168,7 @@
     "title": "ECO 045/MATH 231",
     "description": "Statistical Methods",
     "credits": 3,
-    "designation": "MATH",
+    "designation": "ECO",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -200,6 +200,19 @@
     "grade": "N/A",
     "level": 3,
     "prereqs": ["BUS 003"],
+    "coreqs": [],
+    "offered": "Both"
+  },
+  {
+    "title": "ENGL 001",
+    "description": "Critical Reading and Composition",
+    "credits": 3,
+    "designation": "ENGL",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 1,
+    "prereqs": [],
     "coreqs": [],
     "offered": "Both"
   }
