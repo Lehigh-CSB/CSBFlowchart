@@ -150,7 +150,7 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 2,
+    "level": 3,
     "prereqs": ["ACCT 152", "CSE 241/341"],
     "coreqs": ["CSE 241/341"],
     "offered": "Spring"
@@ -165,7 +165,7 @@
     "grade": "N/A",
     "level": 3,
     "prereqs": ["CSE 216", "CSB 311"],
-    "coreqs": [],
+    "coreqs": ["CSB 311"],
     "offered": "Spring"
   },
   {

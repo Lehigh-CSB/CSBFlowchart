@@ -1,5 +1,18 @@
 [
   {
+    "title": "BUS 003",
+    "description": "Business Communication I",
+    "credits": 1.5,
+    "designation": "BUS",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 1,
+    "prereqs": [],
+    "coreqs": [],
+    "offered": "Both"
+  },
+  {
     "title": "BUS 001",
     "description": "Foundations of Business",
     "credits": 1,
@@ -11,6 +24,45 @@
     "prereqs": [],
     "coreqs": [],
     "offered": "Fall"
+  },
+  {
+    "title": "BUS 203",
+    "description": "Business Communication II",
+    "credits": 1.5,
+    "designation": "BUS",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 3,
+    "prereqs": ["BUS 003"],
+    "coreqs": [],
+    "offered": "Both"
+  },
+  {
+    "title": "MKT 111",
+    "description": "Principles of Marketing",
+    "credits": 3,
+    "designation": "BUS",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 3,
+    "prereqs": [],
+    "coreqs": [],
+    "offered": "Both"
+  },
+  {
+    "title": "LAW 201",
+    "description": "Legal Environment of Business",
+    "credits": 3,
+    "designation": "BUS",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 3,
+    "prereqs": ["ECO 001"],
+    "coreqs": [],
+    "offered": "Both"
   },
   {
     "title": "BZX 002",
@@ -91,19 +143,6 @@
     "offered": "Both"
   },
   {
-    "title": "LAW 201",
-    "description": "Legal Environment of Business",
-    "credits": 3,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": ["ECO 001"],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
     "title": "SCM 186",
     "description": "Supply Chain Operations Management",
     "credits": 3,
@@ -151,19 +190,7 @@
     "coreqs": [],
     "offered": "Both"
   },
-  {
-    "title": "MKT 111",
-    "description": "Principles of Marketing",
-    "credits": 3,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": [],
-    "coreqs": [],
-    "offered": "Both"
-  },
+ 
   {
     "title": "ECO 045/MATH 231",
     "description": "Statistical Methods",
@@ -174,32 +201,6 @@
     "grade": "N/A",
     "level": 1,
     "prereqs": [],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
-    "title": "BUS 003",
-    "description": "Business Communication I",
-    "credits": 1.5,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 1,
-    "prereqs": [],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
-    "title": "BUS 203",
-    "description": "Business Communication II",
-    "credits": 1.5,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": ["BUS 003"],
     "coreqs": [],
     "offered": "Both"
   },
