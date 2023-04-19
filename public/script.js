@@ -132,14 +132,11 @@ function renderCourses() {
         }
         break;
     }
-    // for sidebar 
-    let accordion = document.getElementById('myAccordion');
-    let accordionItem1 = createAccordionItem(courses[i].title, 'Content for Accordion Item #1');
-    accordion.appendChild(accordionItem1);
-
+   
     
   }
   
+  createSidebar();
   var CSE109 = createStep(830, 250, "CSE 109");
   var CSE140 = createStep(910, 250, "CSE 140");
   var CSE216 = createStep(990, 250, "CSE 216");
@@ -152,6 +149,7 @@ function renderCourses() {
   createFlow(CSE017, CSE140);
   createFlow(CSE017, CSE109);
   createFlow(CSE017, CSE241);
+   
   
 }
 
@@ -236,6 +234,14 @@ function createStart(x, y, title) {
 }
 
 // for sidebar
+function createSidebar(){
+  let accordion = document.getElementById('myAccordion');
+  for (let i = 0; i < courses.length; i++) {
+    let accordionItem1 = createAccordionItem(courses[i].title, courses[i].description);
+    accordion.appendChild(accordionItem1);
+  }
+  // for sidebar 
+}
 function createAccordionItem(itemNumber, itemContent) {
   let accordionItem = document.createElement('div');
   accordionItem.className = 'accordion-item';
@@ -270,17 +276,8 @@ function createAccordionItem(itemNumber, itemContent) {
 
   return accordionItem;
 }
- // used to be here
- document.addEventListener('DOMContentLoaded', () => {
-  let accordion = document.getElementById('myAccordion');
-
-  let accordionItem1 = createAccordionItem(1, 'Content for Accordion Item #1');
 
 
-  accordion.appendChild(accordionItem1);
-
-  
-}); 
 
 function createStep(x, y, title) {
   let rect =  new joint.shapes.standard.Rectangle({
