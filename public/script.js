@@ -132,7 +132,12 @@ function renderCourses() {
         }
         break;
     }
-    createSidebar(); 
+    // for sidebar 
+    let accordion = document.getElementById('myAccordion');
+    let accordionItem1 = createAccordionItem(courses[i].title, 'Content for Accordion Item #1');
+    accordion.appendChild(accordionItem1);
+
+    
   }
   
   var CSE109 = createStep(830, 250, "CSE 109");
@@ -230,18 +235,6 @@ function createStart(x, y, title) {
   return rect;
 }
 
-// for sidebar 
-function createSidebar(){
-  let accordion = document.getElementById('myAccordion');
-
-  let accordionItem1 = createAccordionItem(1, 'Content for Accordion Item #1');
-  //let accordionItem2 = createAccordionItem(2, 'Content for Accordion Item #2');
-  //let accordionItem3 = createAccordionItem(3, 'Content for Accordion Item #3');
-
-  accordion.appendChild(accordionItem1);
- // accordion.appendChild(accordionItem2);
-  //accordion.appendChild(accordionItem3);
-}
 // for sidebar
 function createAccordionItem(itemNumber, itemContent) {
   let accordionItem = document.createElement('div');
@@ -277,18 +270,17 @@ function createAccordionItem(itemNumber, itemContent) {
 
   return accordionItem;
 }
-
-document.addEventListener('DOMContentLoaded', () => {
+ // used to be here
+ document.addEventListener('DOMContentLoaded', () => {
   let accordion = document.getElementById('myAccordion');
 
   let accordionItem1 = createAccordionItem(1, 'Content for Accordion Item #1');
-  //let accordionItem2 = createAccordionItem(2, 'Content for Accordion Item #2');
-  //let accordionItem3 = createAccordionItem(3, 'Content for Accordion Item #3');
+
 
   accordion.appendChild(accordionItem1);
- // accordion.appendChild(accordionItem2);
-  //accordion.appendChild(accordionItem3);
-});
+
+  
+}); 
 
 function createStep(x, y, title) {
   let rect =  new joint.shapes.standard.Rectangle({
