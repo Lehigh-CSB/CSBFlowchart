@@ -1,5 +1,5 @@
 
-  let courses = [];
+let courses = [];
 
 const startColor = 'blue';
 const flowColor = 'black';
@@ -132,14 +132,8 @@ function renderCourses() {
         }
         break;
     }
-    // for sidebar 
-    let accordion = document.getElementById('myAccordion');
-    let accordionItem1 = createAccordionItem(courses[i].title, 'Content for Accordion Item #1');
-    accordion.appendChild(accordionItem1);
-
-    
   }
-  
+  createSidebar();
   var CSE109 = createStep(830, 250, "CSE 109");
   var CSE140 = createStep(910, 250, "CSE 140");
   var CSE216 = createStep(990, 250, "CSE 216");
@@ -235,52 +229,54 @@ function createStart(x, y, title) {
   return rect;
 }
 
+function createSidebar() {
+	let accordion = document.getElementById('myAccordion');
+
+    // let accordionItem1 = createAccordionItem(1, 'Content for Accordion Item #1');
+    // let accordionItem2 = createAccordionItem(2, 'Content for Accordion Item #2');
+    // let accordionItem3 = createAccordionItem(3, 'Content for Accordion Item #3');
+
+    // accordion.appendChild(accordionItem1);
+    // accordion.appendChild(accordionItem2);
+    // accordion.appendChild(accordionItem3);
+	for (let i = 0; i < courses.length; i++) {
+		let accordionItem = createAccordionItem(courses[i].title, courses[i].description);
+		accordion.appendChild(accordionItem);
+	}
+}
 // for sidebar
 function createAccordionItem(itemNumber, itemContent) {
   let accordionItem = document.createElement('div');
-  accordionItem.className = 'accordion-item';
+  accordionItem.classList.add('accordion-item');
+  // have all items closed by default
+  accordionItem.innerHTML = `
+    <h2 class="accordion-header" id="heading${itemNumber}">
+	  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${itemNumber}" aria-expanded="false" aria-controls="collapse${itemNumber}">
+		${itemNumber}
+	  </button>
+	</h2>
+	<div id="collapse${itemNumber}" class="accordion-collapse collapse" aria-labelledby="heading${itemNumber}" data-bs-parent="#myAccordion">
+	  <div class="accordion-body">
+		${itemContent}
+	  </div>
+	</div>
+  `;
 
-  let accordionHeader = document.createElement('h2');
-  accordionHeader.className = 'accordion-header';
-  accordionHeader.id = 'heading' + itemNumber;
+  // Add event listener to the button
+  accordionItem.querySelector('button').addEventListener('click', (event) => {
+	// collapse the specified accordion item
+	let collapse = accordionItem.querySelector('.accordion-collapse');
+	collapse.classList.toggle('show');
+	// change button to expand or collapse
+	let button = accordionItem.querySelector('button');
+	button.classList.toggle('collapsed');
+  });
 
-  let accordionButton = document.createElement('button');
-  accordionButton.className = 'accordion-button';
-  accordionButton.type = 'button';
-  accordionButton.setAttribute('data-bs-toggle', 'collapse');
-  accordionButton.setAttribute('data-bs-target', '#collapse' + itemNumber);
-  accordionButton.setAttribute('aria-expanded', 'false');
-  accordionButton.setAttribute('aria-controls', 'collapse' + itemNumber);
-  accordionButton.textContent = itemNumber;
 
-  let accordionCollapse = document.createElement('div');
-  accordionCollapse.id = 'collapse' + itemNumber;
-  accordionCollapse.className = 'accordion-collapse collapse';
-  accordionCollapse.setAttribute('aria-labelledby', 'heading' + itemNumber);
-  accordionCollapse.setAttribute('data-bs-parent', '#myAccordion');
-
-  let accordionBody = document.createElement('div');
-  accordionBody.className = 'accordion-body';
-  accordionBody.textContent = itemContent;
-
-  accordionCollapse.appendChild(accordionBody);
-  accordionHeader.appendChild(accordionButton);
-  accordionItem.appendChild(accordionHeader);
-  accordionItem.appendChild(accordionCollapse);
 
   return accordionItem;
 }
- // used to be here
- document.addEventListener('DOMContentLoaded', () => {
-  let accordion = document.getElementById('myAccordion');
 
-  let accordionItem1 = createAccordionItem(1, 'Content for Accordion Item #1');
-
-
-  accordion.appendChild(accordionItem1);
-
-  
-}); 
 
 function createStep(x, y, title) {
   let rect =  new joint.shapes.standard.Rectangle({
