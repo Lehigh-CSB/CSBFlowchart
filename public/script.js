@@ -1,6 +1,7 @@
 let courses = [];
 var courseCard = [];
-
+var paper;
+var graph;
 
 // make a get request to the server to get the courses and print them to the console
 // the server will send back a stringified version of the courses array
@@ -100,7 +101,7 @@ function renderCourses() {
   	var namespace = joint.shapes;
   	graph = new joint.dia.Graph({}, { cellNamespace: namespace });
 
-  	var paper = new joint.dia.Paper({
+  	paper = new joint.dia.Paper({
 		// el is the DOM element that will contain the paper
 		el: document.getElementById('myholder'),
 		// model is the graph that will be rendered inside the paper
@@ -216,73 +217,55 @@ function renderCourses() {
 		}
 	}
 	drawLines();
+}
 
-   // attach event listener to the paper, mouse click on rectangle
-   paper.on('element:pointerclick', function(elementView) {
-    // check the clicked property of the rectangle
+
+// function addHoverListener(rect){
+//   paper.on('element:pointerover', function(elementView)){
+//     elementView.model.attr({
+//       body: {
+//         fill: 'lightblue'
+//       }
+//     });
+//   }
+// }
+
+function addClickListener(rect){
+  paper.on('element:pointerclick', function(elementView) {    
     if (elementView.model.attributes.clicked === false) {
-      // if the rectangle has not been clicked, change the color to red
       elementView.model.attr({
         body: {
-          fill: 'blue'
+          fill: 'black'
         }
       });
-      // change the clicked property to true
-      elementView.model.attributes.clicked = true;
-    } else {
-      // if the rectangle has been clicked, change the color to blue
-      elementView.model.attr({
-        body: {
-          fill: 'red'
-        }
-      });
-      // change the clicked property to false
-      elementView.model.attributes.clicked = false;
+    } else if (elementView.model.attributes.clicked === true) {
+      if(elementView.model.attributes.offered === "Spring") {
+        elementView.model.attr({
+          body: {
+            fill: 'green'
+          }
+        });
+      } else if(elementView.model.attributes.offered === "Fall") {
+        elementView.model.attr({
+          body: {
+            fill: 'red'
+          }
+        });
+      } else {
+        elementView.model.attr({
+          body: {
+            fill: 'blue'
+          }
+        });
+      }
     }
+    elementView.model.attributes.clicked = !elementView.model.attributes.clicked;
   });
-
 }
 
-// mouse enter event for each course card
-var rects = graph.getCells().filter(cell => cell.get('type') === 'standard.Rectangle');
-
-rects.forEach((cell) => {
-	cell.on('mouseenter', () => {
-		cell.attr('body/fill', 'grey');
-	});
-	createEvent(findCourse(cell), cell, "mouseenter", 'red'); // for prereqs
-});
-rects.forEach((cell) => {
-	cell.on('mouseleave', () => {
-		if (cell.prop('offered') === "Spring") {
-			cell.attr('body/fill', 'green');
-		} else if (cell.prop('offered') === "Fall") {
-			cell.attr('body/fill', 'red');
-		} else {
-			cell.attr('body/fill', 'blue');
-		}
-	});
-	createEvent(findCourse(cell), cell, "mouseleave", 'pink'); // for prereqs
-});
-function createEvent(courseObj, cell, mouseEvent, action) {
-  	courseObj.prereqs.forEach((item) => {
-		const preReq = rects.find((cell) => cell.prop('title') === item);
-		preReq.on(mouseEvent, () => {
-			cell.attr('body/fill', action);
-		});
-  	});
-}
 
 function addAllEventListeners(rect) {
-  // add event listener for mouseover
-  rect.addEventListener('mousehover', () => {
-    // change rect attributes 
-    rect.attr({
-      body: {
-        fill: 'red'
-      }
-    });
-  });
+  addClickListener(rect);
 }
 
 function drawLines() {
@@ -311,6 +294,7 @@ function drawLines() {
 		}
 	}
 }
+
 function findCourseByTitle(title) {
   	return courses.find((course) => course.title === title);
 }
@@ -352,7 +336,9 @@ function createStart(x, y, title, color) {
 	rect.prop('prereqs', course.prerequisites);
 	rect.prop('coreqs', course.corequisites);
 	rect.prop('offered', course.offered);
+  rect.prop('clicked', false);
 	rect.addTo(graph);
+  addAllEventListeners(rect);
 	return rect;
 }
 
@@ -393,7 +379,9 @@ function createStep(x, y, title, color) {
 	rect.prop('prereqs', course.prerequisites);
 	rect.prop('coreqs', course.corequisites);
 	rect.prop('offered', course.offered);
+  rect.prop('clicked', false);
 	rect.addTo(graph);
+  addAllEventListeners(rect);
 	return rect;
 }
 
@@ -435,7 +423,9 @@ function createDecision(x, y, title, color) {
 	rect.prop('prereqs', course.prerequisites);
 	rect.prop('coreqs', course.corequisites);
 	rect.prop('offered', course.offered);
+  rect.prop('clicked', false);
 	rect.addTo(graph);
+  addAllEventListeners(rect);
 	return rect;
 }
 
