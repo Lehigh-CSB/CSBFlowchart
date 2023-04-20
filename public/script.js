@@ -3,21 +3,44 @@ var courseCard = [];
 var paper;
 var graph;
 var ConstraintElementView = joint.dia.ElementView.extend({
-  events: {
-      'mouseover': 'mouseovercard'
-  },
+	events: {
+		'mouseover': 'mouseovercard',
+		'mouseout': 'mouseoutcard',
+	},
 
-  mouseovercard: function(evt, x, y) {
-    console.log("mouseovercard");
-    // change element color to pink
-    this.model.attr({
-      body: {
-        fill: 'pink'
-      }
-    });
-  }
+	mouseovercard: function(evt, x, y) {
+		console.log("mouseovercard");
+		// change element color to pink
+		this.model.attr({
+		body: {
+			fill: 'pink'
+		}
+		});
+	},
+
+	mouseoutcard: function(evt, x, y) {
+		console.log("mouseoutcard");
+		if(this.model.attributes.offered === "Spring"){
+			this.model.attr({
+				body: {
+					fill: 'green'
+				}
+			});
+		} else if(this.model.attributes.offered === "Fall"){
+			this.model.attr({
+				body: {
+					fill: 'red'
+				}
+			});
+		} else {
+			this.model.attr({
+				body: {
+					fill: 'blue'
+				}
+			});
+		}
+	}
 });
-
 // make a get request to the server to get the courses and print them to the console
 // the server will send back a stringified version of the courses array
 fetch("/courses")
