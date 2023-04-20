@@ -11,33 +11,35 @@ var ConstraintElementView = joint.dia.ElementView.extend({
 	mouseovercard: function(evt, x, y) {
 		console.log("mouseovercard");
 		// change element color to pink
-		this.model.attr({
-		body: {
-			fill: 'pink'
+		if(this.model.attributes.clicked === false){
+			this.model.attr({
+			body: {
+				fill: 'pink'
+			}
+			});
 		}
-		});
 	},
 
 	mouseoutcard: function(evt, x, y) {
 		console.log("mouseoutcard");
-		if(this.model.attributes.offered === "Spring"){
-			this.model.attr({
-				body: {
-					fill: 'green'
-				}
-			});
-		} else if(this.model.attributes.offered === "Fall"){
-			this.model.attr({
-				body: {
-					fill: 'red'
-				}
-			});
-		} else {
-			this.model.attr({
-				body: {
-					fill: 'blue'
-				}
-			});
+			if(this.model.attributes.offered === "Spring" && this.model.attributes.clicked === false){
+				this.model.attr({
+					body: {
+						fill: 'green'
+					}
+				});
+			} else if(this.model.attributes.offered === "Fall" && this.model.attributes.clicked === false){
+				this.model.attr({
+					body: {
+						fill: 'red'
+					}
+				});
+			} else if (this.model.attributes.offered === "Both" && this.model.attributes.clicked === false) {
+				this.model.attr({
+					body: {
+						fill: 'blue'
+					}
+				});
 		}
 	}
 });
