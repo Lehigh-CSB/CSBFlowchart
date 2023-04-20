@@ -179,79 +179,79 @@ function renderCourses() {
 			case 1:
 				if (courses[i].designation === "MATH") {
 					if (courses[i].prereqs.length === 0) {
-						courseCard.push(createDecision(xCoordLevel1_MATH, 50, courses[i].title, cardColor));
+						courseCard.push(createCourseBox(xCoordLevel1_MATH, 50, courses[i].title, cardColor));
 					} else {
-						courseCard.push(createStep(xCoordLevel1_MATH, 50, courses[i].title, cardColor));
+						courseCard.push(createCourseBox(xCoordLevel1_MATH, 50, courses[i].title, cardColor));
 					}
 					xCoordLevel1_MATH += 80;
 				} else if (courses[i].designation === "CSE") {
-					courseCard.push(createStart(xCoordLevel1_CSE, 50, courses[i].title, cardColor));    
+					courseCard.push(createCourseBox(xCoordLevel1_CSE, 50, courses[i].title, cardColor));    
 					xCoordLevel1_CSE += 80;
 				} else if (courses[i].designation === "ENGL") {
-					courseCard.push(createStart(580, 50, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(580, 50, courses[i].title, cardColor));
 				} else {
-					courseCard.push(createStart(xCoordLevel1_BUS, 50, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_BUS, 50, courses[i].title, cardColor));
 					xCoordLevel1_BUS += 80; // increment the x-coordinate for the next course at this level
 				}
 				break;
 			case 1.5:
 				if (courses[i].designation === "MATH") {
-					courseCard.push(createStep(xCoordLevel1_5_MATH, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_5_MATH, 150, courses[i].title, cardColor));
 					xCoordLevel1_5_MATH += 80;
 				} else if (courses[i].designation === "CSE") {
-					courseCard.push(createDecision(xCoordLevel1_5_CSE, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_5_CSE, 150, courses[i].title, cardColor));
 					xCoordLevel1_5_CSE += 80;
 				} else if (courses[i].designation === "ENGL") {
-					courseCard.push(createStep(900, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(900, 150, courses[i].title, cardColor));
 				} else {
-					courseCard.push(createStep(xCoordLevel1_5_BUS, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_5_BUS, 150, courses[i].title, cardColor));
 					xCoordLevel1_5_BUS += 80; 
 				}
 				break;
 			case 2:
 				if (courses[i].designation === "MATH") {
-					courseCard.push(createStep(xCoordLevel2_MATH, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_MATH, 250, courses[i].title, cardColor));
 					xCoordLevel2_MATH += 80;
 				} else if (courses[i].designation === "CSE") {
-					courseCard.push(createStep(xCoordLevel2_CSE, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_CSE, 250, courses[i].title, cardColor));
 					xCoordLevel2_CSE += 80;
 				} else if (courses[i].designation === "CSB") {
-					courseCard.push(createStep(xCoordLevel2_CSB, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_CSB, 250, courses[i].title, cardColor));
 					xCoordLevel2_CSB += 80;
 				} else {
-					courseCard.push(createStep(xCoordLevel2_BUS, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_BUS, 250, courses[i].title, cardColor));
 					xCoordLevel2_BUS += 80; 
 				}
 				break;
 			case 2.5:
-				courseCard.push(createStep(xCoordLevel2_5, 350, courses[i].title, cardColor));
+				courseCard.push(createCourseBox(xCoordLevel2_5, 350, courses[i].title, cardColor));
 				xCoordLevel2_5 += 80;
 				break;
 			case 3:
 				if (courses[i].designation === "CSE") {
-					courseCard.push(createStep(xCoordLevel3_CSE, 450, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel3_CSE, 450, courses[i].title, cardColor));
 					xCoordLevel3_CSE += 80;
 				} else if (courses[i].designation === "CSB") {
-					courseCard.push(createStep(xCoordLevel3_CSB, 450, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel3_CSB, 450, courses[i].title, cardColor));
 					xCoordLevel3_CSB += 80;
 				} else {
-					courseCard.push(createStep(xCoordLevel3_BUS, 450, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel3_BUS, 450, courses[i].title, cardColor));
 					xCoordLevel3_BUS += 80; 
 				}
 				break;
 			case 3.5:
-				courseCard.push(createStep(xCoordLevel3_5, 550, courses[i].title, cardColor));
+				courseCard.push(createCourseBox(xCoordLevel3_5, 550, courses[i].title, cardColor));
 				xCoordLevel3_5 += 80;
 				break;
 			case 4:
 				if (courses[i].designation === "CSE") {
-					courseCard.push(createStep(xCoordLevel4_CSE, 650, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel4_CSE, 650, courses[i].title, cardColor));
 					xCoordLevel4_CSE += 80;
 				} else if (courses[i].designation === "CSB") {
-					courseCard.push(createStep(xCoordLevel4_CSB, 650, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel4_CSB, 650, courses[i].title, cardColor));
 					xCoordLevel4_CSB += 80;
 				} else {
-					courseCard.push(createStep(xCoordLevel4_BUS, 650, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel4_BUS, 650, courses[i].title, cardColor));
 					xCoordLevel4_BUS += 80; 
 				}
 				break;
@@ -340,50 +340,8 @@ function findCourseByTitle(title) {
   	return courses.find((course) => course.title === title);
 }
 
-function createStart(x, y, title, color) {
-	let rect = new joint.shapes.standard.Rectangle({
-		position: { x, y },
-		size: { width: 60, height: 50 },
-		z: 1,
-		attrs: {
-		body: {
-			rx: 10,
-			ry: 10,
-			fill: color,
-			stroke: 'none'
-		},
-		label: {
-			text: title,
-			fill: 'white',
-			textWrap: {
-			width: 0,
-			height: 0
-			}
-		}
-		}
-	});
-	// Set the draggable attribute to false
-	rect.attr('rect/draggable', false);
-	// Set custom attributes based on the course
-	let course = findCourseByTitle(title);
-	rect.prop('title', course.title);
-	rect.prop('description', course.description);
-	rect.prop('credits', course.credits);
-	rect.prop('designation', course.designation);
-	rect.prop('completed', course.prerequisites);
-	rect.prop('used', course.used);
-	rect.prop('grade', course.grade);
-	rect.prop('level', course.level);
-	rect.prop('prereqs', course.prerequisites);
-	rect.prop('coreqs', course.corequisites);
-	rect.prop('offered', course.offered);
-  rect.prop('clicked', false);
-	rect.addTo(graph);
-  addAllEventListeners(rect);
-	return rect;
-}
 
-function createStep(x, y, title, color) {
+function createCourseBox(x, y, title, color) {
 	let rect =  new joint.shapes.standard.Rectangle({
 		position: { x, y },
 		size: { width: 60, height: 50 },
@@ -423,52 +381,10 @@ function createStep(x, y, title, color) {
   rect.prop('clicked', false);
 	rect.addTo(graph);
   addAllEventListeners(rect);
+  console.log(rect);
 	return rect;
 }
 
-function createDecision(x, y, title, color) {
-	let rect = new joint.shapes.standard.Rectangle({
-		position: {x, y},
-		size: { width: 60, height: 50 },
-		z: 1,
-		attrs: {
-		body: {
-			rx: 10,
-			ry: 10,
-			fill: color,
-			stroke: 'none'
-		},
-		label: {
-			text: title,
-			fill: 'white',
-			textWrap: {
-			width: 0,
-			height: 0
-			}
-		}
-		}
-		
-	});
-	// Set the draggable attribute to false
-	rect.attr('rect/draggable', false);
-	// Set custom attributes based on the course
-	let course = findCourseByTitle(title);
-	rect.prop('title', course.title);
-	rect.prop('description', course.description);
-	rect.prop('credits', course.credits);
-	rect.prop('designation', course.designation);
-	rect.prop('completed', course.prerequisites);
-	rect.prop('used', course.used);
-	rect.prop('grade', course.grade);
-	rect.prop('level', course.level);
-	rect.prop('prereqs', course.prerequisites);
-	rect.prop('coreqs', course.corequisites);
-	rect.prop('offered', course.offered);
-  rect.prop('clicked', false);
-	rect.addTo(graph);
-  addAllEventListeners(rect);
-	return rect;
-}
 
 function createFlow(source, target, color) {
 	let rect =  new joint.shapes.standard.Link({
