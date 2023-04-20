@@ -1,6 +1,5 @@
 let courses = [];
 var courseCard = [];
-var paper;
 
 
 // make a get request to the server to get the courses and print them to the console
@@ -101,7 +100,7 @@ function renderCourses() {
   	var namespace = joint.shapes;
   	graph = new joint.dia.Graph({}, { cellNamespace: namespace });
 
-  	paper = new joint.dia.Paper({
+  	var paper = new joint.dia.Paper({
 		// el is the DOM element that will contain the paper
 		el: document.getElementById('myholder'),
 		// model is the graph that will be rendered inside the paper
@@ -218,7 +217,29 @@ function renderCourses() {
 	}
 	drawLines();
 
-   
+   // attach event listener to the paper, mouse click on rectangle
+   paper.on('element:pointerclick', function(elementView) {
+    // check the clicked property of the rectangle
+    if (elementView.model.attributes.clicked === false) {
+      // if the rectangle has not been clicked, change the color to red
+      elementView.model.attr({
+        body: {
+          fill: 'blue'
+        }
+      });
+      // change the clicked property to true
+      elementView.model.attributes.clicked = true;
+    } else {
+      // if the rectangle has been clicked, change the color to blue
+      elementView.model.attr({
+        body: {
+          fill: 'red'
+        }
+      });
+      // change the clicked property to false
+      elementView.model.attributes.clicked = false;
+    }
+  });
 
 }
 
@@ -253,28 +274,14 @@ function createEvent(courseObj, cell, mouseEvent, action) {
 }
 
 function addAllEventListeners(rect) {
-  // attach event listener to the paper, mouse click on rectangle
-  paper.on('element:pointerclick', function(elementView) {
-    // check the clicked property of the rectangle
-    if (elementView.model.attributes.clicked === false) {
-      // if the rectangle has not been clicked, change the color to red
-      elementView.model.attr({
-        body: {
-          fill: 'blue'
-        }
-      });
-      // change the clicked property to true
-      elementView.model.attributes.clicked = true;
-    } else {
-      // if the rectangle has been clicked, change the color to blue
-      elementView.model.attr({
-        body: {
-          fill: 'red'
-        }
-      });
-      // change the clicked property to false
-      elementView.model.attributes.clicked = false;
-    }
+  // add event listener for mouseover
+  rect.addEventListener('mousehover', () => {
+    // change rect attributes 
+    rect.attr({
+      body: {
+        fill: 'red'
+      }
+    });
   });
 }
 
