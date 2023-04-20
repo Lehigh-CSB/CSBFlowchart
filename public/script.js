@@ -2,6 +2,21 @@ let courses = [];
 var courseCard = [];
 var paper;
 var graph;
+var ConstraintElementView = joint.dia.ElementView.extend({
+  events: {
+      'mouseover': 'mouseovercard'
+  },
+
+  mouseovercard: function(evt, x, y) {
+    console.log("mouseovercard");
+    // change element color to pink
+    this.model.attr({
+      body: {
+        fill: 'pink'
+      }
+    });
+  }
+});
 
 // make a get request to the server to get the courses and print them to the console
 // the server will send back a stringified version of the courses array
@@ -110,7 +125,8 @@ function renderCourses() {
 		gridSize: 1,
 		cellViewNamespace: namespace,
 		// make paper non-responsive to pointer events so that elements are not draggable
-		interactive: false
+		interactive: false,
+    elementView: ConstraintElementView,
   	});
 
 	// for x-coordinate, the first one for that level is 100, the second one is 200, the third one is 300, etc.
