@@ -9,65 +9,24 @@ var ConstraintElementView = joint.dia.ElementView.extend({
 	},
 
 	mouseovercard: function(evt, x, y) {
-
 		// prereqs is an array of strings
 		var prereqs = findAllPrereqs(this.model.attributes.title);
 		for (let i = 0; i < prereqs.length; i++) {
 			var current = findCourseBoxByTitle(prereqs[i]);
-			if (current !== null && current.attributes.clicked === false) {
-				current.attr({
-					body: {
-						fill: 'black'
-					}
-				});
-			}
+			setHoverColor(current.attributes.title);
 		}
 
 	},
 
 	mouseoutcard: function(evt, x, y) {
-		// if(this.model.attributes.offered === "Spring" && this.model.attributes.clicked === false){
-		// 	this.model.attr({
-		// 		body: {
-		// 			fill: 'green'
-		// 		}
-		// 	});
-		// } else if(this.model.attributes.offered === "Fall" && this.model.attributes.clicked === false){
-		// 	this.model.attr({
-		// 		body: {
-		// 			fill: 'red'
-		// 		}
-		// 	});
-		// } else if (this.model.attributes.offered === "Both" && this.model.attributes.clicked === false) {
-		// 	this.model.attr({
-		// 		body: {
-		// 			fill: 'blue'
-		// 		}
-		// 	});
-		// }
-
 		// prereqs is an array of strings
 		var prereqs = findAllPrereqs(this.model.attributes.title);
 		for (let i = 0; i < prereqs.length; i++) {
 			var current = findCourseBoxByTitle(prereqs[i]);
-			if (current !== null && current.attributes.clicked === false && current.attributes.offered === "Spring") {
-				current.attr({
-					body: {
-						fill: 'green'
-					}
-				});
-			} else if (current !== null && current.attributes.clicked === false && current.attributes.offered === "Fall") {
-				current.attr({
-					body: {
-						fill: 'red'
-					}
-				});
-			} else if (current !== null && current.attributes.clicked === false && current.attributes.offered === "Both") {
-				current.attr({
-					body: {
-						fill: 'blue'
-					}
-				});
+			if (current.attributes.clicked === false) {
+				setOriginalColor(current.attributes.title);
+			} else {
+				setClickColor(current.attributes.title);
 			}
 		}
 	}
@@ -241,79 +200,79 @@ function renderCourses() {
 			case 1:
 				if (courses[i].designation === "MATH") {
 					if (courses[i].prereqs.length === 0) {
-						courseCard.push(createCourseBox(xCoordLevel1_MATH, 50, courses[i].title, cardColor));
+						courseCard.push(createCourseBox(xCoordLevel1_MATH, 50, courses[i].title));
 					} else {
-						courseCard.push(createCourseBox(xCoordLevel1_MATH, 50, courses[i].title, cardColor));
+						courseCard.push(createCourseBox(xCoordLevel1_MATH, 50, courses[i].title));
 					}
 					xCoordLevel1_MATH += 80;
 				} else if (courses[i].designation === "CSE") {
-					courseCard.push(createCourseBox(xCoordLevel1_CSE, 50, courses[i].title, cardColor));    
+					courseCard.push(createCourseBox(xCoordLevel1_CSE, 50, courses[i].title));    
 					xCoordLevel1_CSE += 80;
 				} else if (courses[i].designation === "ENGL") {
-					courseCard.push(createCourseBox(580, 50, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(580, 50, courses[i].title));
 				} else {
-					courseCard.push(createCourseBox(xCoordLevel1_BUS, 50, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_BUS, 50, courses[i].title));
 					xCoordLevel1_BUS += 80; // increment the x-coordinate for the next course at this level
 				}
 				break;
 			case 1.5:
 				if (courses[i].designation === "MATH") {
-					courseCard.push(createCourseBox(xCoordLevel1_5_MATH, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_5_MATH, 150, courses[i].title));
 					xCoordLevel1_5_MATH += 80;
 				} else if (courses[i].designation === "CSE") {
-					courseCard.push(createCourseBox(xCoordLevel1_5_CSE, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_5_CSE, 150, courses[i].title));
 					xCoordLevel1_5_CSE += 80;
 				} else if (courses[i].designation === "ENGL") {
-					courseCard.push(createCourseBox(900, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(900, 150, courses[i].title));
 				} else {
-					courseCard.push(createCourseBox(xCoordLevel1_5_BUS, 150, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel1_5_BUS, 150, courses[i].title));
 					xCoordLevel1_5_BUS += 80; 
 				}
 				break;
 			case 2:
 				if (courses[i].designation === "MATH") {
-					courseCard.push(createCourseBox(xCoordLevel2_MATH, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_MATH, 250, courses[i].title));
 					xCoordLevel2_MATH += 80;
 				} else if (courses[i].designation === "CSE") {
-					courseCard.push(createCourseBox(xCoordLevel2_CSE, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_CSE, 250, courses[i].title));
 					xCoordLevel2_CSE += 80;
 				} else if (courses[i].designation === "CSB") {
-					courseCard.push(createCourseBox(xCoordLevel2_CSB, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_CSB, 250, courses[i].title));
 					xCoordLevel2_CSB += 80;
 				} else {
-					courseCard.push(createCourseBox(xCoordLevel2_BUS, 250, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel2_BUS, 250, courses[i].title));
 					xCoordLevel2_BUS += 80; 
 				}
 				break;
 			case 2.5:
-				courseCard.push(createCourseBox(xCoordLevel2_5, 350, courses[i].title, cardColor));
+				courseCard.push(createCourseBox(xCoordLevel2_5, 350, courses[i].title));
 				xCoordLevel2_5 += 80;
 				break;
 			case 3:
 				if (courses[i].designation === "CSE") {
-					courseCard.push(createCourseBox(xCoordLevel3_CSE, 450, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel3_CSE, 450, courses[i].title));
 					xCoordLevel3_CSE += 80;
 				} else if (courses[i].designation === "CSB") {
-					courseCard.push(createCourseBox(xCoordLevel3_CSB, 450, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel3_CSB, 450, courses[i].title));
 					xCoordLevel3_CSB += 80;
 				} else {
-					courseCard.push(createCourseBox(xCoordLevel3_BUS, 450, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel3_BUS, 450, courses[i].title));
 					xCoordLevel3_BUS += 80; 
 				}
 				break;
 			case 3.5:
-				courseCard.push(createCourseBox(xCoordLevel3_5, 550, courses[i].title, cardColor));
+				courseCard.push(createCourseBox(xCoordLevel3_5, 550, courses[i].title));
 				xCoordLevel3_5 += 80;
 				break;
 			case 4:
 				if (courses[i].designation === "CSE") {
-					courseCard.push(createCourseBox(xCoordLevel4_CSE, 650, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel4_CSE, 650, courses[i].title));
 					xCoordLevel4_CSE += 80;
 				} else if (courses[i].designation === "CSB") {
-					courseCard.push(createCourseBox(xCoordLevel4_CSB, 650, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel4_CSB, 650, courses[i].title));
 					xCoordLevel4_CSB += 80;
 				} else {
-					courseCard.push(createCourseBox(xCoordLevel4_BUS, 650, courses[i].title, cardColor));
+					courseCard.push(createCourseBox(xCoordLevel4_BUS, 650, courses[i].title));
 					xCoordLevel4_BUS += 80; 
 				}
 				break;
@@ -326,36 +285,75 @@ function renderCourses() {
 function addClickListener(rect){
   paper.on('element:pointerclick', function(elementView) {    
     if (elementView.model.attributes.clicked === false) {
-      elementView.model.attr({
-        body: {
-          fill: 'black'
-        }
-      });
-    } else if (elementView.model.attributes.clicked === true) {
-      if(elementView.model.attributes.offered === "Spring") {
-        elementView.model.attr({
-          body: {
-            fill: 'green'
-          }
-        });
-      } else if(elementView.model.attributes.offered === "Fall") {
-        elementView.model.attr({
-          body: {
-            fill: 'red'
-          }
-        });
-      } else {
-        elementView.model.attr({
-          body: {
-            fill: 'blue'
-          }
-        });
-      }
+		setClickColor(elementView.model.attributes.title);
+	  	var prereqs = findAllPrereqs(elementView.model.attributes.title);
+		for (let i = 0; i < prereqs.length; i++) {
+			setClickColor(prereqs[i]);
+		}
+	// WHEN RECLICKED
+    } else { // when clicked attribute is true
+		setOriginalColor(elementView.model.attributes.title);
+		var postCourses = findAllCoursesAfter(elementView.model.attributes.title);
+		for (let i = 0; i < postCourses.length; i++) {
+			setOriginalColor(postCourses[i]);
+		}
     }
-    elementView.model.attributes.clicked = !elementView.model.attributes.clicked;
   });
 }
 
+function findAllCoursesAfter(title) {
+	let coursesAfter = [];
+	// courseAfter is an array of strings containing all courses that have title as a prereq
+	for (let i = 0; i < courses.length; i++) {
+		for (let j = 0; j < courses[i].prereqs.length; j++) {
+			if (courses[i].prereqs[j] === title) {
+				coursesAfter.push(courses[i].title);
+			}
+		}
+	}
+	return coursesAfter;
+}
+
+function setOriginalColor(title) {
+	let courseCard = findCourseBoxByTitle(title);
+	courseCard.attr({
+		body: {
+			fill: 'white',
+			stroke: 'black'
+		},
+		label: {
+			fill: 'black'
+		}
+	});
+	courseCard.attributes.clicked = false;
+}
+
+function setClickColor(title) {
+	let courseCard = findCourseBoxByTitle(title);
+	courseCard.attr({
+		body: {
+			fill: '#68BBE3',
+			stroke: '#68BBE3'
+		},
+		label: {
+			fill: 'white'
+		}
+	});
+	courseCard.attributes.clicked = true;
+}
+
+function setHoverColor(title) {
+	let courseCard = findCourseBoxByTitle(title);
+	courseCard.attr({
+		body: {
+			fill: 'black',
+			stroke: '#FFFFFF',
+		},
+		label: {
+			fill: 'white',
+		}
+	});
+}
 
 function addAllEventListeners(rect) {
   addClickListener(rect);
@@ -395,26 +393,26 @@ function findCourseByTitle(title) {
 }
 
 
-function createCourseBox(x, y, title, color) {
+function createCourseBox(x, y, title) {
 	let rect =  new joint.shapes.standard.Rectangle({
 		position: { x, y },
 		size: { width: 60, height: 50 },
 		z: 1,
 		attrs: {
-		body: {
-			rx: 10,
-			ry: 10,
-			fill: color,
-			stroke: 'none'
-		}, 
-		label: {
-			text: title,
-			textWrap: {
-			width: 0,
-			height: 0
-			},
-			fill: 'white'
-		}
+			body: {
+				rx: 10,
+				ry: 10,
+				fill: 'white',
+				stroke: 'black'
+			}, 
+			label: {
+				text: title,
+				textWrap: {
+				width: 0,
+				height: 0
+				},
+				fill: 'black'
+			}
 		}
 	});  
 	// Set the draggable attribute to false
