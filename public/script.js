@@ -65,6 +65,24 @@ function findAllPrereqsHelper(title, prereqs) {
 	return prereqs;
 }
 
+function findAllCoursesAfter(title) {
+	let coursesAfter = [];
+	findAllCoursesAfterHelper(title, coursesAfter);
+	return coursesAfter;
+}
+
+function findAllCoursesAfterHelper(title, coursesAfter) {
+	// courseAfter is an array of strings containing all courses that have title as a prereq
+	for (let i = 0; i < courses.length; i++) {
+		for (let j = 0; j < courses[i].prereqs.length; j++) {
+			if (courses[i].prereqs[j] === title) {
+				coursesAfter.push(courses[i].title);
+				findAllCoursesAfterHelper(courses[i].title, coursesAfter);
+			}
+		}
+	}
+}
+
 // RETURN A COURSE BOX OBJECT
 function findCourseBoxByTitle(title) {
   for (let i = 0; i < courseCard.length; i++) {
@@ -299,19 +317,6 @@ function addClickListener(rect){
 		}
     }
   });
-}
-
-function findAllCoursesAfter(title) {
-	let coursesAfter = [];
-	// courseAfter is an array of strings containing all courses that have title as a prereq
-	for (let i = 0; i < courses.length; i++) {
-		for (let j = 0; j < courses[i].prereqs.length; j++) {
-			if (courses[i].prereqs[j] === title) {
-				coursesAfter.push(courses[i].title);
-			}
-		}
-	}
-	return coursesAfter;
 }
 
 function setOriginalColor(title) {
