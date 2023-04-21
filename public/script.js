@@ -9,40 +9,71 @@ var ConstraintElementView = joint.dia.ElementView.extend({
 	},
 
 	mouseovercard: function(evt, x, y) {
-		console.log("mouseovercard");
-		// change element color to pink
-		if(this.model.attributes.clicked === false){
-			this.model.attr({
-			body: {
-				fill: 'pink'
+
+		// prereqs is an array of strings
+		var prereqs = findAllPrereqs(this.model.attributes.title);
+		for (let i = 0; i < prereqs.length; i++) {
+			var current = findCourseBoxByTitle(prereqs[i]);
+			if (current !== null && current.attributes.clicked === false) {
+				current.attr({
+					body: {
+						fill: 'black'
+					}
+				});
 			}
-			});
 		}
+
 	},
 
 	mouseoutcard: function(evt, x, y) {
-		console.log("mouseoutcard");
-			if(this.model.attributes.offered === "Spring" && this.model.attributes.clicked === false){
-				this.model.attr({
+		// if(this.model.attributes.offered === "Spring" && this.model.attributes.clicked === false){
+		// 	this.model.attr({
+		// 		body: {
+		// 			fill: 'green'
+		// 		}
+		// 	});
+		// } else if(this.model.attributes.offered === "Fall" && this.model.attributes.clicked === false){
+		// 	this.model.attr({
+		// 		body: {
+		// 			fill: 'red'
+		// 		}
+		// 	});
+		// } else if (this.model.attributes.offered === "Both" && this.model.attributes.clicked === false) {
+		// 	this.model.attr({
+		// 		body: {
+		// 			fill: 'blue'
+		// 		}
+		// 	});
+		// }
+
+		// prereqs is an array of strings
+		var prereqs = findAllPrereqs(this.model.attributes.title);
+		for (let i = 0; i < prereqs.length; i++) {
+			var current = findCourseBoxByTitle(prereqs[i]);
+			if (current !== null && current.attributes.clicked === false && current.attributes.offered === "Spring") {
+				current.attr({
 					body: {
 						fill: 'green'
 					}
 				});
-			} else if(this.model.attributes.offered === "Fall" && this.model.attributes.clicked === false){
-				this.model.attr({
+			} else if (current !== null && current.attributes.clicked === false && current.attributes.offered === "Fall") {
+				current.attr({
 					body: {
 						fill: 'red'
 					}
 				});
-			} else if (this.model.attributes.offered === "Both" && this.model.attributes.clicked === false) {
-				this.model.attr({
+			} else if (current !== null && current.attributes.clicked === false && current.attributes.offered === "Both") {
+				current.attr({
 					body: {
 						fill: 'blue'
 					}
 				});
+			}
 		}
 	}
 });
+
+
 // make a get request to the server to get the courses and print them to the console
 // the server will send back a stringified version of the courses array
 fetch("/courses")
@@ -54,7 +85,38 @@ fetch("/courses")
 		renderCourses(); // renderCourses is put in the fetch function so that it will only run after the data is received
 	});
   
-// USE LIBRARY GOJS
+// RETURN AN ARRAY OF STRINGS
+// each string is a course title
+function findAllPrereqs(title) {
+	// recursive function to find all prereqs of a course
+	let course = findCourseByTitle(title); 
+	let allPrereqs = findAllPrereqsHelper(title, []);
+	return allPrereqs;
+}
+// RECURSIVE FUNCTION
+function findAllPrereqsHelper(title, prereqs) {
+	let course = findCourseByTitle(title);
+	if (course.prereqs.length === 0) {
+		return prereqs;
+	}
+	for (let i = 0; i < course.prereqs.length; i++) {
+		prereqs.push(course.prereqs[i]);
+		findAllPrereqsHelper(course.prereqs[i], prereqs);
+	}
+	return prereqs;
+}
+
+// RETURN A COURSE BOX OBJECT
+function findCourseBoxByTitle(title) {
+  for (let i = 0; i < courseCard.length; i++) {
+    if (courseCard[i].attributes.title === title) {
+      return courseCard[i];
+    }
+  }
+  return null;
+}
+
+
 function renderCourses() {  
 	// preprocess
 	let numxCoordLevel1_BUS = 0, numxCoordLevel1_MATH = 0, numxCoordLevel1_CSE = 0;
@@ -261,16 +323,6 @@ function renderCourses() {
 }
 
 
-// function addHoverListener(rect){
-//   paper.on('element:pointerover', function(elementView)){
-//     elementView.model.attr({
-//       body: {
-//         fill: 'lightblue'
-//       }
-//     });
-//   }
-// }
-
 function addClickListener(rect){
   paper.on('element:pointerclick', function(elementView) {    
     if (elementView.model.attributes.clicked === false) {
@@ -336,6 +388,8 @@ function drawLines() {
 	}
 }
 
+// RETURN THE COURSE OBJECT THAT MATCHES THE TITLE 
+// COURSE OBJECTS ARE STORED IN THE COURSES ARRAY
 function findCourseByTitle(title) {
   	return courses.find((course) => course.title === title);
 }
@@ -375,13 +429,13 @@ function createCourseBox(x, y, title, color) {
 	rect.prop('used', course.used);
 	rect.prop('grade', course.grade);
 	rect.prop('level', course.level);
-	rect.prop('prereqs', course.prerequisites);
-	rect.prop('coreqs', course.corequisites);
+	rect.prop('prereqs', course.prereqs);
+	rect.prop('coreqs', course.coreqs);
 	rect.prop('offered', course.offered);
-  rect.prop('clicked', false);
+  	rect.prop('clicked', false);
 	rect.addTo(graph);
-  addAllEventListeners(rect);
-  console.log(rect);
+	addAllEventListeners(rect);
+	// console.log(rect);
 	return rect;
 }
 
