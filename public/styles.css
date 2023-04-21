@@ -22,6 +22,8 @@ html, body {
 #myAccordion {
   width: 22%;
   float: right;
+  overflow: auto;
+  height: 100%;
 }
 
 .box {
