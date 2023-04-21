@@ -428,9 +428,6 @@ function setHoverColor(title) {
 
 	courseCard.attr({
 		body: {
-			transition: {
-				duration: 10000
-			},
 			fill: 'black',
 			stroke: '#FFFFFF',
 		},
