@@ -2,6 +2,8 @@ let courses = [];
 var courseCard = [];
 var paper;
 var graph;
+var courseTaken = [];
+var qualifiedColor = '#687EE3';
 var ConstraintElementView = joint.dia.ElementView.extend({
 	events: {
 		'mouseover': 'mouseovercard',
@@ -24,6 +26,7 @@ var ConstraintElementView = joint.dia.ElementView.extend({
 		for (let i = 0; i < prereqs.length; i++) {
 			var current = findCourseBoxByTitle(prereqs[i]);
 			if (current.attributes.clicked === false) {
+				// check if the course is in qualified courses
 				setOriginalColor(current.attributes.title);
 			} else {
 				setClickColor(current.attributes.title);
@@ -31,7 +34,6 @@ var ConstraintElementView = joint.dia.ElementView.extend({
 		}
 	}
 });
-
 
 // make a get request to the server to get the courses and print them to the console
 // the server will send back a stringified version of the courses array
@@ -84,6 +86,7 @@ function findAllCoursesAfterHelper(title, coursesAfter) {
 }
 
 // RETURN A COURSE BOX OBJECT
+// COURSE BOX OBJECTS ARE STORED IN THE COURSECARD ARRAY
 function findCourseBoxByTitle(title) {
   for (let i = 0; i < courseCard.length; i++) {
     if (courseCard[i].attributes.title === title) {
@@ -93,7 +96,13 @@ function findCourseBoxByTitle(title) {
   return null;
 }
 
+// RETURN THE COURSE OBJECT THAT MATCHES THE TITLE 
+// COURSE OBJECTS ARE STORED IN THE COURSES ARRAY
+function findCourseByTitle(title) {
+	return courses.find((course) => course.title === title);
+}
 
+// RENDER THE COURSE BOXES AND ARROWS ON THE GRAPH
 function renderCourses() {  
 	// preprocess
 	let numxCoordLevel1_BUS = 0, numxCoordLevel1_MATH = 0, numxCoordLevel1_CSE = 0;
@@ -296,27 +305,85 @@ function renderCourses() {
 				break;
 		}
 	}
+	checkQualifiedCourses();
 	drawLines();
 }
 
+function findQualifiedCourses() {
+	var qualifiedCourses = [];
+	
+	for (let i = 0; i < courses.length; i++) {
+		var qualified = true;
+		if (courses[i].prereqs.length === 0) {
+			qualifiedCourses.push(courses[i].title);
+		} else {
+			// return an array of strings
+			var allPrereqs = findAllPrereqs(courses[i].title);
+			for (let j = 0; j < allPrereqs.length; j++) {
+				// if all prereqs are a subset of courseTaken then qualified is true
+				if (courseTaken.indexOf(allPrereqs[j]) === -1) {
+					qualified = false;
+				}
+			}
+
+			if (qualified === true) {
+				qualifiedCourses.push(courses[i].title);
+			}
+		}
+	}
+	return qualifiedCourses;
+}
+
+function addAllEventListeners(rect) {
+	addClickListener(rect);
+}
 
 function addClickListener(rect){
-  paper.on('element:pointerclick', function(elementView) {    
-    if (elementView.model.attributes.clicked === false) {
-		setClickColor(elementView.model.attributes.title);
-	  	var prereqs = findAllPrereqs(elementView.model.attributes.title);
-		for (let i = 0; i < prereqs.length; i++) {
-			setClickColor(prereqs[i]);
+	paper.on('element:pointerclick', function(elementView) {    
+		if (elementView.model.attributes.clicked === false) {
+			setClickColor(elementView.model.attributes.title);
+			var prereqs = findAllPrereqs(elementView.model.attributes.title);
+			for (let i = 0; i < prereqs.length; i++) {
+				setClickColor(prereqs[i]);
+			}
+		// WHEN RECLICKED
+		} else { // when clicked attribute is true
+			setOriginalColor(elementView.model.attributes.title);
+			var postCourses = findAllCoursesAfter(elementView.model.attributes.title);
+			for (let i = 0; i < postCourses.length; i++) {
+				setOriginalColor(postCourses[i]);
+			}
 		}
-	// WHEN RECLICKED
-    } else { // when clicked attribute is true
-		setOriginalColor(elementView.model.attributes.title);
-		var postCourses = findAllCoursesAfter(elementView.model.attributes.title);
-		for (let i = 0; i < postCourses.length; i++) {
-			setOriginalColor(postCourses[i]);
+		
+		// check qualified courses and set color accordingly
+		checkQualifiedCourses();
+	});
+}
+
+function checkQualifiedCourses() {
+	var qualifiedCourses = findQualifiedCourses();
+	for (let i = 0; i < qualifiedCourses.length; i++) {
+		setQualifiedColor(qualifiedCourses[i]);
+	}
+}
+
+// SET COLOR FOR OUR COURSE BOXES
+
+function setQualifiedColor(title) {
+	let courseCard = findCourseBoxByTitle(title);
+	// if it's already clicked, don't change color
+	if (courseCard.attributes.clicked === true) {
+		return;
+	}
+	courseCard.attr({
+		body: {
+			fill: qualifiedColor,
+			stroke: qualifiedColor
+		},
+		label: {
+			fill: 'white'
 		}
-    }
-  });
+	});
 }
 
 function setOriginalColor(title) {
@@ -331,6 +398,11 @@ function setOriginalColor(title) {
 		}
 	});
 	courseCard.attributes.clicked = false;
+	// remove from courseTaken 
+	if (courseTaken.indexOf(title) !== -1) {
+		courseTaken.splice(courseTaken.indexOf(title), 1);
+	}
+	checkQualifiedCourses();
 }
 
 function setClickColor(title) {
@@ -345,12 +417,20 @@ function setClickColor(title) {
 		}
 	});
 	courseCard.attributes.clicked = true;
+	// add to courseTaken only if it's not already in there
+	if (courseTaken.indexOf(title) === -1) {
+		courseTaken.push(title);
+	}
 }
 
 function setHoverColor(title) {
 	let courseCard = findCourseBoxByTitle(title);
+
 	courseCard.attr({
 		body: {
+			transition: {
+				duration: 10000
+			},
 			fill: 'black',
 			stroke: '#FFFFFF',
 		},
@@ -359,44 +439,6 @@ function setHoverColor(title) {
 		}
 	});
 }
-
-function addAllEventListeners(rect) {
-  addClickListener(rect);
-}
-
-function drawLines() {
-	// prerequisites
-	for (let i = 0; i < courseCard.length; i++) { // loop through all the courses
-		let title = courseCard[i].prop('title');
-		let course = findCourseByTitle(title);
-		for (let j = 0; j < course.prereqs.length; j++) { // loop through all the prereqs for each course
-			for (let k = 0; k < courseCard.length; k++) { // loop through all the courses to find the course object that matches the prereq
-				if (courseCard[k].prop('title') === course.prereqs[j]) { 
-					createFlow(courseCard[k], courseCard[i], "black");
-				}
-			}		
-		}
-	}
-	// Coreqs
-	for (let i = 0; i < courseCard.length; i++) {
-		let title = courseCard[i].prop('title');
-		let course = findCourseByTitle(title);
-		for (let j = 0; j < course.coreqs.length; j++) {
-			for (let k = 0; k < courseCard.length; k++) {
-				if (courseCard[k].prop('title') === course.coreqs[j]) {
-					createFlow(courseCard[k], courseCard[i], "red");
-				}
-			}		
-		}
-	}
-}
-
-// RETURN THE COURSE OBJECT THAT MATCHES THE TITLE 
-// COURSE OBJECTS ARE STORED IN THE COURSES ARRAY
-function findCourseByTitle(title) {
-  	return courses.find((course) => course.title === title);
-}
-
 
 function createCourseBox(x, y, title) {
 	let rect =  new joint.shapes.standard.Rectangle({
@@ -438,7 +480,6 @@ function createCourseBox(x, y, title) {
   	rect.prop('clicked', false);
 	rect.addTo(graph);
 	addAllEventListeners(rect);
-	// console.log(rect);
 	return rect;
 }
 
@@ -484,4 +525,31 @@ function createFlow(source, target, color) {
 		}
 	});
 	rect.addTo(graph);
+}
+
+function drawLines() {
+	// prerequisites
+	for (let i = 0; i < courseCard.length; i++) { // loop through all the courses
+		let title = courseCard[i].prop('title');
+		let course = findCourseByTitle(title);
+		for (let j = 0; j < course.prereqs.length; j++) { // loop through all the prereqs for each course
+			for (let k = 0; k < courseCard.length; k++) { // loop through all the courses to find the course object that matches the prereq
+				if (courseCard[k].prop('title') === course.prereqs[j]) { 
+					createFlow(courseCard[k], courseCard[i], "black");
+				}
+			}		
+		}
+	}
+	// Coreqs
+	for (let i = 0; i < courseCard.length; i++) {
+		let title = courseCard[i].prop('title');
+		let course = findCourseByTitle(title);
+		for (let j = 0; j < course.coreqs.length; j++) {
+			for (let k = 0; k < courseCard.length; k++) {
+				if (courseCard[k].prop('title') === course.coreqs[j]) {
+					createFlow(courseCard[k], courseCard[i], "red");
+				}
+			}		
+		}
+	}
 }
