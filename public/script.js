@@ -307,6 +307,7 @@ function renderCourses() {
 	}
 	checkQualifiedCourses();
 	drawLines();
+	createSidebar();
 }
 
 function findQualifiedCourses() {
@@ -437,6 +438,43 @@ function setHoverColor(title) {
 	});
 }
 
+function createSidebar() {
+    let accordion = document.getElementById('myAccordion');
+    for (let i = 0; i < courses.length; i++) {
+        let accordionItem = createAccordionItem(courses[i].title, courses[i].description);
+        accordion.appendChild(accordionItem);
+    }
+}
+// for sidebar
+function createAccordionItem(itemNumber, itemContent) {
+  let accordionItem = document.createElement('div');
+  accordionItem.classList.add('accordion-item');
+  // have all items closed by default
+  accordionItem.innerHTML = `
+    <h2 class="accordion-header" id="heading${itemNumber}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${itemNumber}" aria-expanded="false" aria-controls="collapse${itemNumber}">
+        ${itemNumber}
+      </button>
+    </h2>
+    <div id="collapse${itemNumber}" class="accordion-collapse collapse" aria-labelledby="heading${itemNumber}" data-bs-parent="#myAccordion">
+      <div class="accordion-body">
+        ${itemContent}
+      </div>
+    </div>
+  `;
+
+  // Add event listener to the button
+  accordionItem.querySelector('button').addEventListener('click', (event) => {
+    // collapse the specified accordion item
+    let collapse = accordionItem.querySelector('.accordion-collapse');
+    collapse.classList.toggle('show');
+    // change button to expand or collapse
+    let button = accordionItem.querySelector('button');
+    button.classList.toggle('collapsed');
+  });
+  return accordionItem;
+}
+
 function createCourseBox(x, y, title) {
 	let rect =  new joint.shapes.standard.Rectangle({
 		position: { x, y },
@@ -479,7 +517,6 @@ function createCourseBox(x, y, title) {
 	addAllEventListeners(rect);
 	return rect;
 }
-
 
 function createFlow(source, target, color) {
 	let rect =  new joint.shapes.standard.Link({
