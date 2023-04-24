@@ -5,7 +5,7 @@
     "description": "Problem-solving using the Java programming language. Data types, control flow, methods, arrays, objects, inheritance, breadth of computing. Includes laboratory. If credit is given for CSE 007 then no credit will be given for CSE 003 nor CSE 004.",
     "link": "https://engineering.lehigh.edu/cse/cse-007-introduction-programming-4",
     "credits": 4,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -20,7 +20,7 @@
     "description": "Algorithmic design and implementation in a high level, object oriented language, such as Java. Classes, subclasses, recursion, searching, sorting, linked lists, trees, stacks, queues.",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-17-programming-and-data-structures-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -37,7 +37,7 @@
     "description": "Advanced programming and data structures, including dynamic structures, memory allocation, data organization, symbol tables, hash tables, B-trees, data files. Object-oriented design and implementation of simple assemblers, loaders, interpreters, compilers, and translators. Practical methods for implementing medium-scale programs. ",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-109-systems-software-4",
     "credits": 4,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -54,7 +54,7 @@
     "description": "Basic representations used in algorithms: propositional and predicate logic, set operations and functions, relations and their representations, matrices and their representations, graphs and their representations, trees and their representations. Basic formalizations for proving algorithm correctness: logical consequences, induction, structural induction. Basic formalizations for algorithm analysis: counting, pigeonhole principle, permutations. ",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-140-foundations-discrete-structures-and-algorithms-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -74,7 +74,7 @@
     "description": "Interaction between low-level computer architectural properties and high-level program behaviors: instruction set design; digital logic and assembly language; processor organization; the memory hierarchy; multicore and GPU architectures; and processor interrupt/exception models. Credit will not be given for both CSE 201 and CSE 202. ",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-202-computer-organization-and-architecture-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -91,7 +91,7 @@
     "description": "The software lifecycle; lifecycle models; software planning; testing; specification methods; maintenance. Emphasis on team work and large-scale software systems, including oral presentations and written reports.",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-216-software-engineering-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -108,7 +108,7 @@
     "description": "An interactive exploration of the current and future role of computers, the Internet, and related technologies in changing the standard of living, work environments, society and its ethical values. Privacy, security, depersonalization, responsibility, and professional ethics; the role of computer and Internet technologies in changing education, business modalities, collaboration mechanisms, and everyday life.",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-252-computers-internet-and-society-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -123,7 +123,7 @@
     "description": " Use, structure and implementation of several programming languages.",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-262-programming-languages-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -140,7 +140,7 @@
     "description": "Process and thread programming models, management, and scheduling. Resource sharing and deadlocks. Memory management, including virtual memory and page replacement strategies. I/O issues in the operating system. File system implementation. Multiprocessing. Computer security as it impacts the operating system.",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-303-operating-system-design-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -158,7 +158,7 @@
     "description": "Algorithms for searching, sorting, manipulating graphs and trees, finding shortest paths and minimum spanning trees, scheduling tasks, etc.: proofs of their correctness and analysis of their asymptotic runtime and memory demands. Designing algorithms: recursion, divide-and-conquer, greediness, dynamic programming. Limits on algorithm efficiency using elementary NP-completeness theory.",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-340-design-and-analysis-algorithms-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -175,7 +175,7 @@
     "description": "Design of large databases: Integration of databases and applications using SQL and JDBC; transaction processing; performance tuning; data mining and data warehouses. Not available to students who have credit for CSE 341 or ISE 224. || Design of large databases; normalization; query languages (including SQL); Transaction-processing protocols; Query optimization; performance tuning; distributed systems. Not available to students who have credit for CSE 241.",
     "link": "https://engineering.lehigh.edu/cse/academics/course-index/cse-241-database-systems-and-applications || https://engineering.lehigh.edu/cse/academics/course-index/cse-341-database-systems-algorithms-and-applications-3",
     "credits": 3,
-    "designation": "CS",
+    "designation": "CSE",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -196,6 +196,7 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
+<<<<<<< HEAD
     "level": 2,
     "prereqs": [
       "ACCT 152",
@@ -204,6 +205,11 @@
     "coreqs": [
       "CSE 241/341"
     ],
+=======
+    "level": 3,
+    "prereqs": ["ACCT 152", "CSE 241/341"],
+    "coreqs": ["CSE 241/341"],
+>>>>>>> 94100a5219567d4f7bc5d7b7908d34e3174d11b3
     "offered": "Spring"
   },
   {
@@ -217,11 +223,16 @@
     "used": false,
     "grade": "N/A",
     "level": 3,
+<<<<<<< HEAD
     "prereqs": [
       "CSE 216",
       "CSB 311"
     ],
     "coreqs": [],
+=======
+    "prereqs": ["CSE 216", "CSB 311"],
+    "coreqs": ["CSB 311"],
+>>>>>>> 94100a5219567d4f7bc5d7b7908d34e3174d11b3
     "offered": "Spring"
   },
   {
