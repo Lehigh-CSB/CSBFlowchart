@@ -16,9 +16,9 @@ fetch("/courses")
     courses = data;
     renderCourses(); // renderCourses is put in the fetch function so that it will only run after the data is received
   });
-  
+
 // USE LIBRARY GOJS
-function renderCourses() {  
+function renderCourses() {
   var namespace = joint.shapes;
   graph = new joint.dia.Graph({}, { cellNamespace: namespace });
 
@@ -36,7 +36,7 @@ function renderCourses() {
 
   // for x-coordinate, the first one for that level is 100, the second one is 200, the third one is 300, etc.
   let xCoordLevel1_BUS = 100, xCoordLevel1_MATH = 750, xCoordLevel1_CSE = 950;
-  let xCoordLevel1_5_BUS = 100 , xCoordLevel1_5_MATH = 750, xCoordLevel1_5_CSE = 950; //830
+  let xCoordLevel1_5_BUS = 100, xCoordLevel1_5_MATH = 750, xCoordLevel1_5_CSE = 950; //830
   let xCoordLevel2_BUS = 100, xCoordLevel2_MATH = 750, xCoordLevel2_CSE = 830, xCoordLevel2_CSB = 670;
   let xCoordLevel2_5 = 100;
   let xCoordLevel3_BUS = 100, xCoordLevel3_CSE = 830, xCoordLevel3_CSB = 670;
@@ -47,17 +47,17 @@ function renderCourses() {
   for (let i = 0; i < courses.length; i++) {
     // there are multiple levels of courses, render the y-coordinate of the rectangle based on the level
     // level 1: 30, level 1.5: 45, level 2: 60, level 2.5: 75, level 3: 90, level 3.5: 105, level 4: 120
-    switch(courses[i].level) {
+    switch (courses[i].level) {
       case 1:
         if (courses[i].designation === "MATH") {
           console.log(courses[i].prereqs.length)
           // if (courses[i].prereqs.length === 0) {
-          
+
           // }//console.log(courses[10].prerequisites.length)
-          
+
           var x = createStart(xCoordLevel1_MATH, 50, courses[i].title);
 
-          
+
           xCoordLevel1_MATH += 80;
         } else if (courses[i].designation === "CSE") {
           var CSE007 = createStart(xCoordLevel1_CSE, 50, courses[i].title);
@@ -80,9 +80,9 @@ function renderCourses() {
           createStep(900, 150, courses[i].title);
         } else {
           createStep(xCoordLevel1_5_BUS, 150, courses[i].title);
-          xCoordLevel1_5_BUS += 80; 
+          xCoordLevel1_5_BUS += 80;
         }
-      
+
         break;
       case 2:
         if (courses[i].designation === "MATH") {
@@ -96,7 +96,7 @@ function renderCourses() {
           xCoordLevel2_CSB += 80;
         } else {
           createCourseBox(xCoordLevel2_BUS, 250, courses[i].title);
-          xCoordLevel2_BUS += 80; 
+          xCoordLevel2_BUS += 80;
         }
         break;
       case 2.5:
@@ -112,7 +112,7 @@ function renderCourses() {
           xCoordLevel3_CSB += 80;
         } else {
           createCourseBox(xCoordLevel3_BUS, 450, courses[i].title);
-          xCoordLevel3_BUS += 80; 
+          xCoordLevel3_BUS += 80;
         }
         break;
       case 3.5:
@@ -128,7 +128,7 @@ function renderCourses() {
           xCoordLevel4_CSB += 80;
         } else {
           createCourseBox(xCoordLevel4_BUS, 650, courses[i].title);
-          xCoordLevel4_BUS += 80; 
+          xCoordLevel4_BUS += 80;
         }
         break;
     }
@@ -146,7 +146,7 @@ function renderCourses() {
   createFlow(CSE017, CSE140);
   createFlow(CSE017, CSE109);
   createFlow(CSE017, CSE241);
-  
+
 }
 
 function findCourseByTitle(title) {
@@ -230,19 +230,19 @@ function createStart(x, y, title) {
 }
 
 function createSidebar() {
-	let accordion = document.getElementById('myAccordion');
+  let accordion = document.getElementById('myAccordion');
 
-    // let accordionItem1 = createAccordionItem(1, 'Content for Accordion Item #1');
-    // let accordionItem2 = createAccordionItem(2, 'Content for Accordion Item #2');
-    // let accordionItem3 = createAccordionItem(3, 'Content for Accordion Item #3');
+  // let accordionItem1 = createAccordionItem(1, 'Content for Accordion Item #1');
+  // let accordionItem2 = createAccordionItem(2, 'Content for Accordion Item #2');
+  // let accordionItem3 = createAccordionItem(3, 'Content for Accordion Item #3');
 
-    // accordion.appendChild(accordionItem1);
-    // accordion.appendChild(accordionItem2);
-    // accordion.appendChild(accordionItem3);
-	for (let i = 0; i < courses.length; i++) {
-		let accordionItem = createAccordionItem(courses[i].title, courses[i].description);
-		accordion.appendChild(accordionItem);
-	}
+  // accordion.appendChild(accordionItem1);
+  // accordion.appendChild(accordionItem2);
+  // accordion.appendChild(accordionItem3);
+  for (let i = 0; i < courses.length; i++) {
+    let accordionItem = createAccordionItem(courses[i].title, courses[i].description);
+    accordion.appendChild(accordionItem);
+  }
 }
 // for sidebar
 function createAccordionItem(itemNumber, itemContent) {
@@ -264,12 +264,12 @@ function createAccordionItem(itemNumber, itemContent) {
 
   // Add event listener to the button
   accordionItem.querySelector('button').addEventListener('click', (event) => {
-	// collapse the specified accordion item
-	let collapse = accordionItem.querySelector('.accordion-collapse');
-	collapse.classList.toggle('show');
-	// change button to expand or collapse
-	let button = accordionItem.querySelector('button');
-	button.classList.toggle('collapsed');
+    // collapse the specified accordion item
+    let collapse = accordionItem.querySelector('.accordion-collapse');
+    collapse.classList.toggle('show');
+    // change button to expand or collapse
+    let button = accordionItem.querySelector('button');
+    button.classList.toggle('collapsed');
   });
 
 
@@ -279,7 +279,7 @@ function createAccordionItem(itemNumber, itemContent) {
 
 
 function createStep(x, y, title) {
-  let rect =  new joint.shapes.standard.Rectangle({
+  let rect = new joint.shapes.standard.Rectangle({
     position: { x, y },
     size: { width: 60, height: 50 },
     z: 1,
@@ -289,7 +289,7 @@ function createStep(x, y, title) {
         ry: 10,
         fill: stepColor,
         stroke: 'none'
-      }, 
+      },
       label: {
         text: title,
         textWrap: {
@@ -299,7 +299,7 @@ function createStep(x, y, title) {
         fill: 'white'
       }
     }
-  });  
+  });
   // Set the draggable attribute to false
   rect.attr('rect/draggable', false);
   // Set custom attributes based on the course
@@ -321,7 +321,7 @@ function createStep(x, y, title) {
 
 function createDecision(x, y, title) {
   let rect = new joint.shapes.standard.Rectangle({
-    position: {x, y},
+    position: { x, y },
     size: { width: 60, height: 50 },
     z: 1,
     attrs: {
@@ -340,7 +340,7 @@ function createDecision(x, y, title) {
         }
       }
     }
-    
+
   });
   // Set the draggable attribute to false
   rect.attr('rect/draggable', false);
@@ -362,7 +362,7 @@ function createDecision(x, y, title) {
 }
 
 function createFlow(source, target) {
-  let rect =  new joint.shapes.standard.Link({
+  let rect = new joint.shapes.standard.Link({
     source: { id: source.id },
     target: { id: target.id },
     z: 2,
@@ -384,7 +384,7 @@ function createFlow(source, target) {
           rx: 5,
           ry: 5
         },
-        labelText: {            
+        labelText: {
           textAnchor: 'middle',
           textVerticalAnchor: 'middle'
         }
@@ -393,7 +393,7 @@ function createFlow(source, target) {
         {
           tagName: 'rect',
           selector: 'labelBody'
-        }, 
+        },
         {
           tagName: 'text',
           selector: 'labelText'
