@@ -524,6 +524,8 @@ function createCourseBox(x, y, title) {
 	rect.prop('coreqs', course.coreqs);
 	rect.prop('offered', course.offered);
   	rect.prop('clicked', false);
+	rect.prop('link', course.link);
+	rect.prop('link', courseName);
 	rect.addTo(graph);
 	addAllEventListeners(rect);
 	return rect;

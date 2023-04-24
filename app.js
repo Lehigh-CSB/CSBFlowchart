@@ -23,7 +23,9 @@ class Course {
         level,
         prereqs,
         coreqs,
-        offered
+        offered,
+        courseName,
+        link
     ) 
     {
         this.title = title;
@@ -37,6 +39,8 @@ class Course {
         this.prereqs = prereqs;
         this.coreqs = coreqs;
         this.offered = offered;
+        this.link = link;
+        this.courseName = courseName
     }
 }
 
@@ -73,7 +77,9 @@ function readData(filename) {
             filename[i].level,
             filename[i].prereqs,
             filename[i].coreqs,
-            filename[i].offered
+            filename[i].offered,
+            filename[i].courseName,
+            filename[i].link,
         );
         counter++;
     }
