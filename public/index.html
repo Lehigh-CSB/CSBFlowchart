@@ -11,13 +11,37 @@
 </head>
 <body>
     <!-- content -->
-    <div id="container">
-        <div id="myholder"></div>
-        <div class="accordion" id="myAccordion">
+   <div id="container">
+    <div id="myholder"></div>
+    
+    <div id="sidebar">
+        <div id="buttonHolder">
+            <button type="button" id="myBtn1" onclick="showClasses()" >Classes</button>
+            <button type="button" id="myBtn2" onclick="showEle()" >Electives</button>
+            <button type="button" id="myBtn3" onclick="showAP()" >AP placement</button>
         </div>
+
+        <div class="accordion" id="myAccordion">
+        
+        </div>
+
+        <div  id="electives">
+        
+        </div>
+
+        <div  id="placement">
+        
+        </div>
+
+
     </div>
 
-   <br>
+    
+</div>
+
+
+<br>
+
     <!-- dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
