@@ -21,7 +21,7 @@
     "bootstrap": "^5.3.0-alpha2",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
-    "requirejs": "^2.3.6",
-    "tether-drop": "^1.4.2"
+    "jointjs": "^3.6.5",
+    "requirejs": "^2.3.6"
   }
 }
