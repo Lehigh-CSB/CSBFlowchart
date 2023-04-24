@@ -1,18 +1,5 @@
 [
   {
-    "title": "BUS 003",
-    "description": "Business Communication I",
-    "credits": 1.5,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 1,
-    "prereqs": [],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
     "title": "BUS 001",
     "courseName": "Foundations of Business",
     "description": "An introduction to business, emphasizing critical issues impacting the business world, such as globalization, technology, ethics, and diversity. Provides an overview of the various functional areas of business and how they fit together. Stresses experiential learning and develops team-building skills. Provides an introduction to career opportunities and curriculum choices in business and economics. Course is offered only in the fall and is open only to College of Business and Economics freshmen.",
@@ -26,45 +13,6 @@
     "prereqs": [],
     "coreqs": [],
     "offered": "Fall"
-  },
-  {
-    "title": "BUS 203",
-    "description": "Business Communication II",
-    "credits": 1.5,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": ["BUS 003"],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
-    "title": "MKT 111",
-    "description": "Principles of Marketing",
-    "credits": 3,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": [],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
-    "title": "LAW 201",
-    "description": "Legal Environment of Business",
-    "credits": 3,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": ["ECO 001"],
-    "coreqs": [],
-    "offered": "Both"
   },
   {
     "title": "BZX 002",
@@ -166,7 +114,6 @@
     "offered": "Both"
   },
   {
-<<<<<<< HEAD
     "title": "LAW 201",
     "courseName": "Legal Environment of Business",
     "description": "This course examines the legal relationships between business and government, business and society, and the individual and society. A significant focus of the course is on the structure of the U.S. legal system, the role of the courts in the legal system, and contract law as the principal mechanism for the private allocation of resources and risk allocation. The course also focuses on business ethics with particular emphasis on corporate social responsibility. Junior standing is required.",
@@ -184,8 +131,6 @@
     "offered": "Both"
   },
   {
-=======
->>>>>>> 94100a5219567d4f7bc5d7b7908d34e3174d11b3
     "title": "SCM 186",
     "courseName": "Supply Chain Operations Management",
     "description": "Introduction to managing global supply chains and operations within the context of an integrated value chain. Topics include supply chain management, total quality management, project management, demand forecasting, supply management, lean operations, aggregate planning, capacity planning, inventory management, distribution and transportation management, and performance measurement.",
@@ -228,7 +173,7 @@
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 4,
+    "level": 3,
     "prereqs": [
       "CSB 312",
       "ECO 119/146",
@@ -242,7 +187,6 @@
     "coreqs": [],
     "offered": "Both"
   },
-<<<<<<< HEAD
   {
     "title": "MKT 111",
     "courseName": "Principles of Marketing",
@@ -258,16 +202,13 @@
     "coreqs": [],
     "offered": "Both"
   },
-=======
- 
->>>>>>> 94100a5219567d4f7bc5d7b7908d34e3174d11b3
   {
     "title": "ECO 045/MATH 231",
     "courseName": "Statistical Methods [ECO 045] || Probability and Statistics [MATH 231]",
     "description": "Descriptive statistics, probability and probability distributions, sampling, estimation, hypothesis testing, chi-square tests, simple regression and correlation. Note: CBE students may not take MATH 012 as a replacement for ECO 045. || Probability and distribution of random variables; populations and random sampling; chi-square and t distributions; estimation and tests of hypotheses; correlation and regression theory of two variables. Not available for credit to students who have completed both MATH 263 and MATH 264. ",
     "link": "https://catalog.lehigh.edu/courselisting/eco/",
     "credits": 3,
-    "designation": "ECO",
+    "designation": "MATH",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -277,19 +218,12 @@
     "offered": "Both"
   },
   {
-<<<<<<< HEAD
     "title": "BUS 003",
     "courseName": "Business Communication I",
     "description": "Good business communication skills are essential for success on the job and career advancement. In this course, students are introduced to the frameworks and skills necessary to deliver communications that are professional, clear, concise, evidence-driven, and persuasive. Emphasis is on basic business communications including memos, reports, and presentations.",
     "link": "https://catalog.lehigh.edu/courselisting/bus/",
     "credits": 1.5,
     "designation": "BUS",
-=======
-    "title": "ENGL 001",
-    "description": "Critical Reading and Composition",
-    "credits": 3,
-    "designation": "ENGL",
->>>>>>> 94100a5219567d4f7bc5d7b7908d34e3174d11b3
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -297,7 +231,6 @@
     "prereqs": [],
     "coreqs": [],
     "offered": "Both"
-<<<<<<< HEAD
   },
   {
     "title": "BUS 203",
@@ -315,7 +248,5 @@
     ],
     "coreqs": [],
     "offered": "Both"
-=======
->>>>>>> 94100a5219567d4f7bc5d7b7908d34e3174d11b3
   }
 ]
