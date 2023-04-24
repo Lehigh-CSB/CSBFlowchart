@@ -429,7 +429,7 @@ function setHoverColor(title) {
 
 	courseCard.attr({
 		body: {
-			fill: 'black',
+			fill: 'lightblue',
 			stroke: '#FFFFFF',
 		},
 		label: {
