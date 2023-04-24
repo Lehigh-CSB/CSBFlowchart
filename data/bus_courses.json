@@ -1,20 +1,9 @@
 [
   {
-    "title": "BUS 003",
-    "description": "Business Communication I",
-    "credits": 1.5,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 1,
-    "prereqs": [],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
     "title": "BUS 001",
-    "description": "Foundations of Business",
+    "courseName": "Foundations of Business",
+    "description": "An introduction to business, emphasizing critical issues impacting the business world, such as globalization, technology, ethics, and diversity. Provides an overview of the various functional areas of business and how they fit together. Stresses experiential learning and develops team-building skills. Provides an introduction to career opportunities and curriculum choices in business and economics. Course is offered only in the fall and is open only to College of Business and Economics freshmen.",
+    "link": "https://catalog.lehigh.edu/courselisting/bus/",
     "credits": 1,
     "designation": "BUS",
     "completed": false,
@@ -26,47 +15,10 @@
     "offered": "Fall"
   },
   {
-    "title": "BUS 203",
-    "description": "Business Communication II",
-    "credits": 1.5,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": ["BUS 003"],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
-    "title": "MKT 111",
-    "description": "Principles of Marketing",
-    "credits": 3,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": [],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
-    "title": "LAW 201",
-    "description": "Legal Environment of Business",
-    "credits": 3,
-    "designation": "BUS",
-    "completed": false,
-    "used": false,
-    "grade": "N/A",
-    "level": 3,
-    "prereqs": ["ECO 001"],
-    "coreqs": [],
-    "offered": "Both"
-  },
-  {
     "title": "BZX 002",
-    "description": "Student to Professional Co-Curriculum Tier 2",
+    "courseName": "Student to Professional Co-Curriculum Tier 2",
+    "description": "The Student to Professional (STP) Co-Curriculum is a required, non-graded experience focused on academic success and professional preparation for all undergraduate students in business programs (BSBU, CSB, and IBE). In STP Tier 2, students gain understanding of basic professional development skills and resources through a small-group experience facilitated by faculty and staff volunteers, with the goal of providing equitable scaffolding to help students prepare for subsequent, more independent engagement in the sophomore-level co-curriculum.",
+    "link": "https://businessundergrad.lehigh.edu/lehigh-business-student-professional-co-curriculum",
     "credits": 0,
     "designation": "BZX",
     "completed": false,
@@ -79,7 +31,9 @@
   },
   {
     "title": "ECO 001",
-    "description": "Principles of Economics",
+    "courseName": "Principles of Economics",
+    "description": "A one-semester course in the principles of economics. General topics covered are: supply and demand; pricing and production decisions of firms; the role of government in the economy; the determination of national income; money and banking; monetary and fiscal policy; and government finance.",
+    "link": "https://catalog.lehigh.edu/courselisting/eco/",
     "credits": 4,
     "designation": "BUS",
     "completed": false,
@@ -92,7 +46,9 @@
   },
   {
     "title": "ACCT 151",
-    "description": "Introduction to Financial Accounting",
+    "courseName": "Introduction to Financial Accounting",
+    "description": " The organization, measurement and interpretation of economic information. Introduction to accounting theory, concepts and principles, the accounting cycle, information processing, and financial statements. Exposure to controversial issues concerning income determination and valuation. Must have sophomore standing.",
+    "link": "https://catalog.lehigh.edu/courselisting/acct/",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -105,59 +61,98 @@
   },
   {
     "title": "ACCT 152",
-    "description": "Introduction to Managerial Accounting",
+    "courseName": "Introduction to Managerial Accounting",
+    "description": "An introduction to internal accounting information for all levels of management. Topics include cost flow in a manufacturing operation; planning, evaluating and controlling through budgeting and standard costing; and decision-making using cost-volume-profit analysis, direct costing, and relevant costs.",
+    "link": "https://catalog.lehigh.edu/courselisting/acct/",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
     "level": 2.5,
-    "prereqs": ["ACCT 151"],
+    "prereqs": [
+      "ACCT 151"
+    ],
     "coreqs": [],
     "offered": "Both"
   },
   {
     "title": "ECO 119/146",
-    "description": "Intermediate Micro/Macroeconomic Analysis",
+    "courseName": "Intermediate Microeconomic Analysis [ECO 146] || Intermediate Macroeconomic Analysis [ECO 119] ",
+    "description": "The application of economic analysis to managerial and public policy decision-making. Not available for credit to students who have taken ECO 105. Note: MATH 012 does not serve as a pre-requisite for ECO 146. || Macroeconomic measurement, theory and policy. The use of alternative macroeconomic models to analyze the level of national income, inflation, unemployment, economic growth; the balance of payments, and exchange rate determination. ",
+    "link": "https://catalog.lehigh.edu/courselisting/eco/",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
     "level": 3,
-    "prereqs": ["ECO 001", "MATH 021"],
+    "prereqs": [
+      "ECO 001",
+      "MATH 021"
+    ],
     "coreqs": [],
     "offered": "Both"
   },
   {
     "title": "FIN 125",
-    "description": "Introduction to Finance",
+    "courseName": "Introduction to Finance",
+    "description": "An introductory finance course stressing the links between corporate finance and investments. Major topic areas will include financial statement analysis, time value of money, risk and return valuation of stocks and bonds, capital budgeting, and cost of capital.",
+    "link": "https://catalog.lehigh.edu/coursesprogramsandcurricula/businessandeconomics/finance/#courseinventory",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
     "level": 3,
-    "prereqs": ["ECO 001", "MATH 021", "ECO 045/MATH 231"],
+    "prereqs": [
+      "ECO 001",
+      "MATH 021",
+      "ECO 045/MATH 231"
+    ],
+    "coreqs": [],
+    "offered": "Both"
+  },
+  {
+    "title": "LAW 201",
+    "courseName": "Legal Environment of Business",
+    "description": "This course examines the legal relationships between business and government, business and society, and the individual and society. A significant focus of the course is on the structure of the U.S. legal system, the role of the courts in the legal system, and contract law as the principal mechanism for the private allocation of resources and risk allocation. The course also focuses on business ethics with particular emphasis on corporate social responsibility. Junior standing is required.",
+    "link": "https://catalog.lehigh.edu/coursesprogramsandcurricula/businessandeconomics/law/#courseinventory",
+    "credits": 3,
+    "designation": "BUS",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 3,
+    "prereqs": [
+      "ECO 001"
+    ],
     "coreqs": [],
     "offered": "Both"
   },
   {
     "title": "SCM 186",
-    "description": "Supply Chain Operations Management",
+    "courseName": "Supply Chain Operations Management",
+    "description": "Introduction to managing global supply chains and operations within the context of an integrated value chain. Topics include supply chain management, total quality management, project management, demand forecasting, supply management, lean operations, aggregate planning, capacity planning, inventory management, distribution and transportation management, and performance measurement.",
+    "link": "https://catalog.lehigh.edu/courselisting/scm/",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
     "level": 3,
-    "prereqs": ["MATH 021", "ECO 045/MATH 231"],
+    "prereqs": [
+      "MATH 021",
+      "ECO 045/MATH 231"
+    ],
     "coreqs": [],
     "offered": "Both"
   },
   {
     "title": "MGT 043",
-    "description": "Organization Behavior",
+    "courseName": "Organizational Behavior",
+    "description": "Managers are needed to make organizations run effectively. Management is the art and science of helping individuals achieve goals together, often in organizations. This course provides a broad overview of the principles of effective, ethical management at the individual, interpersonal, and group levels of analysis. Emphasis is on conceptual and applied organizational behavior topics",
+    "link": "https://catalog.lehigh.edu/courselisting/mgt/",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -170,13 +165,15 @@
   },
   {
     "title": "MGT 301",
-    "description": "Strategic Management in a Global Environment",
+    "courseName": "Strategic Management in a Global Environment",
+    "description": "The capstone business class, integrating concepts and practices from the core business classes, utilizing an organizationwide strategic perspective and examining the relationship among firm strategy, structure and environment. The course emphasizes strategic analysis strategy formulation, and strategy implementation so as to achieve sustainable competitive advantage. Corporate governance, corporate social responsibility and business ethics are incorporated into the strategic perspective. Case analyses and competitive simulation game are the central learning components.",
+    "link": "https://catalog.lehigh.edu/courselisting/mgt/",
     "credits": 4,
     "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
-    "level": 4,
+    "level": 3,
     "prereqs": [
       "CSB 312",
       "ECO 119/146",
@@ -190,12 +187,28 @@
     "coreqs": [],
     "offered": "Both"
   },
- 
+  {
+    "title": "MKT 111",
+    "courseName": "Principles of Marketing",
+    "description": "The purpose of this course is to give an overview of the entire marketing function. The objective is to take a broad-based approach to expose students to the meaning of marketing, the terminology of marketing, the activities involved in marketing, how managers make and implement decisions in marketing, and how they evaluate the results. The role of marketing in the broader society will also be discussed. At the end of this course, students will be able to understand the meaning of the marketing concept, various marketing terminologies, how firms develop and evaluate marketing strategies related to product, place, price, and promotions, how marketing strategies are related to other strategies of the firm, and what internal and external factors influence the marketing decisions.",
+    "link": "https://catalog.lehigh.edu/courselisting/mgt/",
+    "credits": 3,
+    "designation": "BUS",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 3,
+    "prereqs": [],
+    "coreqs": [],
+    "offered": "Both"
+  },
   {
     "title": "ECO 045/MATH 231",
-    "description": "Statistical Methods",
+    "courseName": "Statistical Methods [ECO 045] || Probability and Statistics [MATH 231]",
+    "description": "Descriptive statistics, probability and probability distributions, sampling, estimation, hypothesis testing, chi-square tests, simple regression and correlation. Note: CBE students may not take MATH 012 as a replacement for ECO 045. || Probability and distribution of random variables; populations and random sampling; chi-square and t distributions; estimation and tests of hypotheses; correlation and regression theory of two variables. Not available for credit to students who have completed both MATH 263 and MATH 264. ",
+    "link": "https://catalog.lehigh.edu/courselisting/eco/",
     "credits": 3,
-    "designation": "ECO",
+    "designation": "MATH",
     "completed": false,
     "used": false,
     "grade": "N/A",
@@ -205,15 +218,34 @@
     "offered": "Both"
   },
   {
-    "title": "ENGL 001",
-    "description": "Critical Reading and Composition",
-    "credits": 3,
-    "designation": "ENGL",
+    "title": "BUS 003",
+    "courseName": "Business Communication I",
+    "description": "Good business communication skills are essential for success on the job and career advancement. In this course, students are introduced to the frameworks and skills necessary to deliver communications that are professional, clear, concise, evidence-driven, and persuasive. Emphasis is on basic business communications including memos, reports, and presentations.",
+    "link": "https://catalog.lehigh.edu/courselisting/bus/",
+    "credits": 1.5,
+    "designation": "BUS",
     "completed": false,
     "used": false,
     "grade": "N/A",
     "level": 1,
     "prereqs": [],
+    "coreqs": [],
+    "offered": "Both"
+  },
+  {
+    "title": "BUS 203",
+    "courseName": "Business Communication II",
+    "description": "This course builds on the basic communication frameworks and skills from BUS 003 to enhance students’ business communications related to data, particularly oral communication. Students will translate data and analysis into narratives that provide context for their messages and make persuasive recommendations in written and oral formats.",
+    "link": "https://catalog.lehigh.edu/courselisting/bus/",
+    "credits": 1.5,
+    "designation": "BUS",
+    "completed": false,
+    "used": false,
+    "grade": "N/A",
+    "level": 3,
+    "prereqs": [
+      "BUS 003"
+    ],
     "coreqs": [],
     "offered": "Both"
   }
