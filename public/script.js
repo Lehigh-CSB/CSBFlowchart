@@ -445,6 +445,16 @@ function createSidebar() {
         accordion.appendChild(accordionItem);
     }
 }
+
+// to show electives in sidebar
+function showElectives() {
+    let electiveSidebar = document.getElementById('electives');
+    for (let i = 0; i < courses.length; i++) {
+        let accordionItem = createAccordionItem(courses[i].title, courses[i].description);
+        electiveSidebar.appendChild(accordionItem);
+    }
+}
+
 // for sidebar
 function createAccordionItem(itemNumber, itemContent) {
   let accordionItem = document.createElement('div');
@@ -586,4 +596,22 @@ function drawLines() {
 			}		
 		}
 	}
+}
+
+function showClasses(){
+	document.getElementById("myAccordion").style.display = "block"; 
+	document.getElementById("electives").style.display = "none"; 
+	document.getElementById("placement").style.display = "none"; 
+}
+
+function showEle(){
+	document.getElementById("myAccordion").style.display = "none"; 
+	document.getElementById("electives").style.display = "block"; 
+	document.getElementById("placement").style.display = "none"; 
+}
+
+function showAP(){
+	document.getElementById("myAccordion").style.display = "none"; 
+	document.getElementById("electives").style.display = "none"; 
+	document.getElementById("placement").style.display = "block"; 
 }
