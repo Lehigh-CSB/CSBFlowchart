@@ -443,7 +443,7 @@ function setHoverColor(title) {
 function createSidebar() {
 	let accordion = document.getElementById('myAccordion');
 	for (let i = 0; i < courses.length; i++) {
-		let accordionItem = createAccordionItem(courses[i].title, courses[i].credits, courses[i].link, courses[i].description);
+		let accordionItem = createAccordionItem(courses[i].title, courses[i].courseName, courses[i].credits, courses[i].link, courses[i].description);
 		accordion.appendChild(accordionItem);
 	}
 }
@@ -452,13 +452,13 @@ function createSidebar() {
 function showElectives() {
 	let electiveSidebar = document.getElementById('electives');
 	for (let i = 0; i < courses.length; i++) {
-		let accordionItem = createAccordionItem(courses[i].title, courses[i].credits, courses[i].link, courses[i].description);
+		let accordionItem = createAccordionItem(courses[i].title, courses[i].courseName, courses[i].credits, courses[i].link, courses[i].description);
 		electiveSidebar.appendChild(accordionItem);
 	}
 }
 
 // for sidebar
-function createAccordionItem(itemNumber, itemCredits, itemLink, itemContent) {
+function createAccordionItem(itemNumber, itemName, itemCredits, itemLink, itemContent) {
 	console.log("here");
 	let accordionItem = document.createElement('div');
 	accordionItem.classList.add('accordion-item');
@@ -471,9 +471,10 @@ function createAccordionItem(itemNumber, itemCredits, itemLink, itemContent) {
     </h2>
     <div id="collapse${itemNumber}" class="accordion-collapse collapse" aria-labelledby="heading${itemNumber}" data-bs-parent="#myAccordion">
       <div class="accordion-body">
+	 <p> <b>${itemName}</b></p>
 	  <p>Credits: ${itemCredits}</p>
 	  <a href="${itemLink}">Course Link</a>
-	  </br>
+	  <hr>
 	  ${itemContent}
 
 
