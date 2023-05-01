@@ -92,8 +92,30 @@ function findCourseBoxByTitle(title) {
     if (courseCard[i].attributes.title === title) {
       return courseCard[i];
     }
+<<<<<<< HEAD
   }
   return null;
+=======
+   
+    
+  }
+  
+  createSidebar();
+  var CSE109 = createStep(830, 250, "CSE 109");
+  var CSE140 = createStep(910, 250, "CSE 140");
+  var CSE216 = createStep(990, 250, "CSE 216");
+  var CSE241 = createStep(1070, 250, "CSE 241/341");
+  createFlow(x, y);
+  createFlow(y, z);
+  createFlow(CSE007, CSE017);
+  createFlow(x, CSE140);
+  createFlow(CSE017, CSE216);
+  createFlow(CSE017, CSE140);
+  createFlow(CSE017, CSE109);
+  createFlow(CSE017, CSE241);
+   
+  
+>>>>>>> fecd1bf (added sidebar function)
 }
 
 // RETURN THE COURSE OBJECT THAT MATCHES THE TITLE 
@@ -446,6 +468,14 @@ function createSidebar() {
     }
 }
 // for sidebar
+function createSidebar(){
+  let accordion = document.getElementById('myAccordion');
+  for (let i = 0; i < courses.length; i++) {
+    let accordionItem1 = createAccordionItem(courses[i].title, courses[i].description);
+    accordion.appendChild(accordionItem1);
+  }
+  // for sidebar 
+}
 function createAccordionItem(itemNumber, itemContent) {
   let accordionItem = document.createElement('div');
   accordionItem.classList.add('accordion-item');
@@ -475,6 +505,7 @@ function createAccordionItem(itemNumber, itemContent) {
   return accordionItem;
 }
 
+<<<<<<< HEAD
 function createCourseBox(x, y, title) {
 	let rect =  new joint.shapes.standard.Rectangle({
 		position: { x, y },
@@ -516,6 +547,49 @@ function createCourseBox(x, y, title) {
 	rect.addTo(graph);
 	addAllEventListeners(rect);
 	return rect;
+=======
+
+
+function createStep(x, y, title) {
+  let rect =  new joint.shapes.standard.Rectangle({
+    position: { x, y },
+    size: { width: 60, height: 50 },
+    z: 1,
+    attrs: {
+      body: {
+        rx: 10,
+        ry: 10,
+        fill: stepColor,
+        stroke: 'none'
+      }, 
+      label: {
+        text: title,
+        textWrap: {
+          width: 0,
+          height: 0
+        },
+        fill: 'white'
+      }
+    }
+  });  
+  // Set the draggable attribute to false
+  rect.attr('rect/draggable', false);
+  // Set custom attributes based on the course
+  let course = findCourseByTitle(title);
+  rect.prop('title', course.title);
+  rect.prop('description', course.description);
+  rect.prop('credits', course.credits);
+  rect.prop('designation', course.designation);
+  rect.prop('completed', course.prerequisites);
+  rect.prop('used', course.used);
+  rect.prop('grade', course.grade);
+  rect.prop('level', course.level);
+  rect.prop('prereqs', course.prerequisites);
+  rect.prop('coreqs', course.corequisites);
+  rect.prop('offered', course.offered);
+  rect.addTo(graph);
+  return rect;
+>>>>>>> fecd1bf (added sidebar function)
 }
 
 function createFlow(source, target, color) {
