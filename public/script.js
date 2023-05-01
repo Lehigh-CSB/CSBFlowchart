@@ -1,4 +1,5 @@
 let courses = [];
+let electives = [];
 var courseCard = [];
 var paper;
 var graph;
@@ -45,6 +46,20 @@ fetch("/courses")
 		courses = data;
 		renderCourses(); // renderCourses is put in the fetch function so that it will only run after the data is received
 	});
+
+fetch("/electives")
+	.then((response) => {
+		return response.json();
+	})
+	.then((data) => {
+		electives = data;
+		renderElectives();
+	});
+
+function renderElectives() {
+	
+}
+
   
 // RETURN AN ARRAY OF STRINGS
 // each string is a course title
