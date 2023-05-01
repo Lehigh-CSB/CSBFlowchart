@@ -10,7 +10,7 @@ var ConstraintElementView = joint.dia.ElementView.extend({
 		'mouseout': 'mouseoutcard',
 	},
 
-	mouseovercard: function(evt, x, y) {
+	mouseovercard: function (evt, x, y) {
 		// prereqs is an array of strings
 		var prereqs = findAllPrereqs(this.model.attributes.title);
 		for (let i = 0; i < prereqs.length; i++) {
@@ -20,7 +20,7 @@ var ConstraintElementView = joint.dia.ElementView.extend({
 
 	},
 
-	mouseoutcard: function(evt, x, y) {
+	mouseoutcard: function (evt, x, y) {
 		// prereqs is an array of strings
 		var prereqs = findAllPrereqs(this.model.attributes.title);
 		for (let i = 0; i < prereqs.length; i++) {
@@ -45,12 +45,12 @@ fetch("/courses")
 		courses = data;
 		renderCourses(); // renderCourses is put in the fetch function so that it will only run after the data is received
 	});
-  
+
 // RETURN AN ARRAY OF STRINGS
 // each string is a course title
 function findAllPrereqs(title) {
 	// recursive function to find all prereqs of a course
-	let course = findCourseByTitle(title); 
+	let course = findCourseByTitle(title);
 	let allPrereqs = findAllPrereqsHelper(title, []);
 	return allPrereqs;
 }
@@ -88,12 +88,12 @@ function findAllCoursesAfterHelper(title, coursesAfter) {
 // RETURN A COURSE BOX OBJECT
 // COURSE BOX OBJECTS ARE STORED IN THE COURSECARD ARRAY
 function findCourseBoxByTitle(title) {
-  for (let i = 0; i < courseCard.length; i++) {
-    if (courseCard[i].attributes.title === title) {
-      return courseCard[i];
-    }
-  }
-  return null;
+	for (let i = 0; i < courseCard.length; i++) {
+		if (courseCard[i].attributes.title === title) {
+			return courseCard[i];
+		}
+	}
+	return null;
 }
 
 // RETURN THE COURSE OBJECT THAT MATCHES THE TITLE 
@@ -103,7 +103,7 @@ function findCourseByTitle(title) {
 }
 
 // RENDER THE COURSE BOXES AND ARROWS ON THE GRAPH
-function renderCourses() {  
+function renderCourses() {
 	// preprocess
 	let numxCoordLevel1_BUS = 0, numxCoordLevel1_MATH = 0, numxCoordLevel1_CSE = 0;
 	let numxCoordLevel1_5_BUS = 0, numxCoordLevel1_5_MATH = 0, numxCoordLevel1_5_CSE = 0;
@@ -113,37 +113,37 @@ function renderCourses() {
 	let numxCoordLevel3_5_BUS = 0, numxCoordLevel3_5_CSE = 0, numxCoordLevel3_5_CSB = 0;
 	let numxCoordLevel4_BUS = 0, numxCoordLevel4_CSE = 0, numxCoordLevel4_CSB = 0;
 	for (let i = 0; i < courses.length; i++) {
-		switch(courses[i].level) {
+		switch (courses[i].level) {
 			case 1:
 				if (courses[i].designation === "MATH") {
 					numxCoordLevel1_MATH++;
-				} else if (courses[i].designation === "CSE") {	
+				} else if (courses[i].designation === "CSE") {
 					numxCoordLevel1_CSE++;
-				} else {	
+				} else {
 					numxCoordLevel1_BUS++;
 				}
 				break;
 			case 1.5:
 				if (courses[i].designation === "MATH") {
 					numxCoordLevel1_5_MATH++;
-				} else if (courses[i].designation === "CSE") {	
+				} else if (courses[i].designation === "CSE") {
 					numxCoordLevel1_5_CSE++;
-				} else {	
+				} else {
 					numxCoordLevel1_5_BUS++;
 				}
 				break;
 			case 2:
 				if (courses[i].designation === "MATH") {
 					numxCoordLevel2_MATH++;
-				} else if (courses[i].designation === "CSE") {	
+				} else if (courses[i].designation === "CSE") {
 					numxCoordLevel2_CSE++;
-				} else if (courses[i].designation === "CSB") {	
+				} else if (courses[i].designation === "CSB") {
 					numxCoordLevel2_CSB++;
-				} else {	
+				} else {
 					numxCoordLevel2_BUS++;
-				}		
+				}
 				break;
-			case 2.5: 
+			case 2.5:
 				if (courses[i].designation === "MATH") {
 					numxCoordLevel2_5_MATH++;
 				} else if (courses[i].designation === "CSE") {
@@ -155,41 +155,41 @@ function renderCourses() {
 				}
 				break;
 			case 3:
-				if (courses[i].designation === "CSE") {	
+				if (courses[i].designation === "CSE") {
 					numxCoordLevel3_CSE++;
-				} else if (courses[i].designation === "CSB") {	
+				} else if (courses[i].designation === "CSB") {
 					numxCoordLevel3_CSB++;
-				} else {	
+				} else {
 					numxCoordLevel3_BUS++;
-				}	
-				break;	
+				}
+				break;
 			case 3.5:
 				if (courses[i].designation === "MATH") {
 					numxCoordLevel3_5_MATH++;
-				} else if (courses[i].designation === "CSE") {	
+				} else if (courses[i].designation === "CSE") {
 					numxCoordLevel3_5_CSE++;
-				} else if (courses[i].designation === "CSB") {	
+				} else if (courses[i].designation === "CSB") {
 					numxCoordLevel3_5_CSB++;
-				} else {	
+				} else {
 					numxCoordLevel3_5_BUS++;
-				}		
+				}
 				break;
 			case 4:
-				if (courses[i].designation === "CSE") {	
+				if (courses[i].designation === "CSE") {
 					numxCoordLevel4_CSE++;
-				} else if (courses[i].designation === "CSB") {	
+				} else if (courses[i].designation === "CSB") {
 					numxCoordLevel4_CSB++;
-				} else {	
+				} else {
 					numxCoordLevel4_BUS++;
-				}		
+				}
 				break;
 		}
 	}
 
-  	var namespace = joint.shapes;
-  	graph = new joint.dia.Graph({}, { cellNamespace: namespace });
+	var namespace = joint.shapes;
+	graph = new joint.dia.Graph({}, { cellNamespace: namespace });
 
-  	paper = new joint.dia.Paper({
+	paper = new joint.dia.Paper({
 		// el is the DOM element that will contain the paper
 		el: document.getElementById('myholder'),
 		// model is the graph that will be rendered inside the paper
@@ -199,12 +199,12 @@ function renderCourses() {
 		cellViewNamespace: namespace,
 		// make paper non-responsive to pointer events so that elements are not draggable
 		interactive: false,
-    elementView: ConstraintElementView,
-  	});
+		elementView: ConstraintElementView,
+	});
 
 	// for x-coordinate, the first one for that level is 100, the second one is 200, the third one is 300, etc.
 	let xCoordLevel1_BUS = 100, xCoordLevel1_MATH = 750, xCoordLevel1_CSE = 950;
-	let xCoordLevel1_5_BUS = 100 , xCoordLevel1_5_MATH = 750, xCoordLevel1_5_CSE = 950; //830
+	let xCoordLevel1_5_BUS = 100, xCoordLevel1_5_MATH = 750, xCoordLevel1_5_CSE = 950; //830
 	let xCoordLevel2_BUS = 300, xCoordLevel2_MATH = 750, xCoordLevel2_CSE = 830, xCoordLevel2_CSB = 670;
 	let xCoordLevel2_5 = 300;
 	let xCoordLevel3_BUS = 100, xCoordLevel3_CSE = 870, xCoordLevel3_CSB = 670; //830
@@ -215,15 +215,15 @@ function renderCourses() {
 	for (let i = 0; i < courses.length; i++) {
 		// there are multiple levels of courses, render the y-coordinate of the rectangle based on the level
 		// level 1: 30, level 1.5: 45, level 2: 60, level 2.5: 75, level 3: 90, level 3.5: 105, level 4: 120
-		
+
 		// determine courseCard color based on the semester it is offered
-		let cardColor = 'blue'; 
+		let cardColor = 'blue';
 		if (courses[i].offered === "Spring") {
 			cardColor = 'green';
 		} else if (courses[i].offered === "Fall") {
 			cardColor = 'red';
 		}
-		switch(courses[i].level) {
+		switch (courses[i].level) {
 			case 1:
 				if (courses[i].designation === "MATH") {
 					if (courses[i].prereqs.length === 0) {
@@ -233,7 +233,7 @@ function renderCourses() {
 					}
 					xCoordLevel1_MATH += 80;
 				} else if (courses[i].designation === "CSE") {
-					courseCard.push(createCourseBox(xCoordLevel1_CSE, 50, courses[i].title));    
+					courseCard.push(createCourseBox(xCoordLevel1_CSE, 50, courses[i].title));
 					xCoordLevel1_CSE += 80;
 				} else if (courses[i].designation === "ENGL") {
 					courseCard.push(createCourseBox(580, 50, courses[i].title));
@@ -253,7 +253,7 @@ function renderCourses() {
 					courseCard.push(createCourseBox(900, 150, courses[i].title));
 				} else {
 					courseCard.push(createCourseBox(xCoordLevel1_5_BUS, 150, courses[i].title));
-					xCoordLevel1_5_BUS += 80; 
+					xCoordLevel1_5_BUS += 80;
 				}
 				break;
 			case 2:
@@ -268,7 +268,7 @@ function renderCourses() {
 					xCoordLevel2_CSB += 80;
 				} else {
 					courseCard.push(createCourseBox(xCoordLevel2_BUS, 250, courses[i].title));
-					xCoordLevel2_BUS += 80; 
+					xCoordLevel2_BUS += 80;
 				}
 				break;
 			case 2.5:
@@ -284,7 +284,7 @@ function renderCourses() {
 					xCoordLevel3_CSB += 80;
 				} else {
 					courseCard.push(createCourseBox(xCoordLevel3_BUS, 450, courses[i].title));
-					xCoordLevel3_BUS += 80; 
+					xCoordLevel3_BUS += 80;
 				}
 				break;
 			case 3.5:
@@ -300,7 +300,7 @@ function renderCourses() {
 					xCoordLevel4_CSB += 80;
 				} else {
 					courseCard.push(createCourseBox(xCoordLevel4_BUS, 650, courses[i].title));
-					xCoordLevel4_BUS += 80; 
+					xCoordLevel4_BUS += 80;
 				}
 				break;
 		}
@@ -308,11 +308,12 @@ function renderCourses() {
 	checkQualifiedCourses();
 	drawLines();
 	createSidebar();
+	showElectives();
 }
 
 function findQualifiedCourses() {
 	var qualifiedCourses = [];
-	
+
 	for (let i = 0; i < courses.length; i++) {
 		var qualified = true;
 		if (courses[i].prereqs.length === 0) {
@@ -339,15 +340,15 @@ function addAllEventListeners(rect) {
 	addClickListener(rect);
 }
 
-function addClickListener(rect){
-	paper.on('element:pointerclick', function(elementView) {    
+function addClickListener(rect) {
+	paper.on('element:pointerclick', function (elementView) {
 		if (elementView.model.attributes.clicked === false) {
 			setClickColor(elementView.model.attributes.title);
 			var prereqs = findAllPrereqs(elementView.model.attributes.title);
 			for (let i = 0; i < prereqs.length; i++) {
 				setClickColor(prereqs[i]);
 			}
-		// WHEN RECLICKED
+			// WHEN RECLICKED
 		} else { // when clicked attribute is true
 			setOriginalColor(elementView.model.attributes.title);
 			var postCourses = findAllCoursesAfter(elementView.model.attributes.title);
@@ -355,7 +356,7 @@ function addClickListener(rect){
 				setOriginalColor(postCourses[i]);
 			}
 		}
-		
+
 		// check qualified courses and set color accordingly
 		checkQualifiedCourses();
 	});
@@ -440,54 +441,60 @@ function setHoverColor(title) {
 
 // to show courses
 function createSidebar() {
-    let accordion = document.getElementById('myAccordion');
-    for (let i = 0; i < courses.length; i++) {
-        let accordionItem = createAccordionItem(courses[i].title, courses[i].description);
-        accordion.appendChild(accordionItem);
-    }
+	let accordion = document.getElementById('myAccordion');
+	for (let i = 0; i < courses.length; i++) {
+		let accordionItem = createAccordionItem(courses[i].title, courses[i].credits, courses[i].link, courses[i].description);
+		accordion.appendChild(accordionItem);
+	}
 }
 
 // to show electives in sidebar
 function showElectives() {
-    let electiveSidebar = document.getElementById('electives');
-    for (let i = 0; i < courses.length; i++) {
-        let accordionItem = createAccordionItem(courses[i].title, courses[i].description);
-        electiveSidebar.appendChild(accordionItem);
-    }
+	let electiveSidebar = document.getElementById('electives');
+	for (let i = 0; i < courses.length; i++) {
+		let accordionItem = createAccordionItem(courses[i].title, courses[i].credits, courses[i].link, courses[i].description);
+		electiveSidebar.appendChild(accordionItem);
+	}
 }
 
 // for sidebar
-function createAccordionItem(itemNumber, itemContent) {
-  let accordionItem = document.createElement('div');
-  accordionItem.classList.add('accordion-item');
-  // have all items closed by default
-  accordionItem.innerHTML = `
+function createAccordionItem(itemNumber, itemCredits, itemLink, itemContent) {
+	console.log("here");
+	let accordionItem = document.createElement('div');
+	accordionItem.classList.add('accordion-item');
+	// have all items closed by default
+	accordionItem.innerHTML = `
     <h2 class="accordion-header" id="heading${itemNumber}">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${itemNumber}" aria-expanded="false" aria-controls="collapse${itemNumber}">
-        ${itemNumber}
+     ${itemNumber}
       </button>
     </h2>
     <div id="collapse${itemNumber}" class="accordion-collapse collapse" aria-labelledby="heading${itemNumber}" data-bs-parent="#myAccordion">
       <div class="accordion-body">
-        ${itemContent}
+	  <p>Credits: ${itemCredits}</p>
+	  <a href="${itemLink}">Course Link</a>
+	  </br>
+	  ${itemContent}
+
+
       </div>
     </div>
   `;
 
-  // Add event listener to the button
-  accordionItem.querySelector('button').addEventListener('click', (event) => {
-    // collapse the specified accordion item
-    let collapse = accordionItem.querySelector('.accordion-collapse');
-    collapse.classList.toggle('show');
-    // change button to expand or collapse
-    let button = accordionItem.querySelector('button');
-    button.classList.toggle('collapsed');
-  });
-  return accordionItem;
+	// Add event listener to the button
+	accordionItem.querySelector('button').addEventListener('click', (event) => {
+		// collapse the specified accordion item
+		let collapse = accordionItem.querySelector('.accordion-collapse');
+		collapse.classList.toggle('show');
+		// change button to expand or collapse
+		let button = accordionItem.querySelector('button');
+		button.classList.toggle('collapsed');
+	});
+	return accordionItem;
 }
 
 function createCourseBox(x, y, title) {
-	let rect =  new joint.shapes.standard.Rectangle({
+	let rect = new joint.shapes.standard.Rectangle({
 		position: { x, y },
 		size: { width: 60, height: 50 },
 		z: 1,
@@ -497,17 +504,17 @@ function createCourseBox(x, y, title) {
 				ry: 10,
 				fill: 'white',
 				stroke: 'black'
-			}, 
+			},
 			label: {
 				text: title,
 				textWrap: {
-				width: 0,
-				height: 0
+					width: 0,
+					height: 0
 				},
 				fill: 'black'
 			}
 		}
-	});  
+	});
 	// Set the draggable attribute to false
 	rect.attr('rect/draggable', false);
 	// Set custom attributes based on the course
@@ -523,52 +530,52 @@ function createCourseBox(x, y, title) {
 	rect.prop('prereqs', course.prereqs);
 	rect.prop('coreqs', course.coreqs);
 	rect.prop('offered', course.offered);
-  	rect.prop('clicked', false);
+	rect.prop('clicked', false);
 	rect.prop('link', course.link);
-	rect.prop('link', courseName);
+	rect.prop('link', course.courseName);
 	rect.addTo(graph);
 	addAllEventListeners(rect);
 	return rect;
 }
 
 function createFlow(source, target, color) {
-	let rect =  new joint.shapes.standard.Link({
+	let rect = new joint.shapes.standard.Link({
 		source: { id: source.id },
 		target: { id: target.id },
 		z: 2,
 		attrs: {
-		line: {
-			stroke: color
-		}
+			line: {
+				stroke: color
+			}
 		},
 		defaultLabel: {
-		attrs: {
-			labelBody: {
-			ref: 'labelText',
-			x: 'calc(x - 8)',
-			y: 'calc(y - 8)',
-			width: 'calc(w + 16)',
-			height: 'calc(h + 16)',
-			fill: 'black',
-			stroke: 'none',
-			rx: 5,
-			ry: 5
+			attrs: {
+				labelBody: {
+					ref: 'labelText',
+					x: 'calc(x - 8)',
+					y: 'calc(y - 8)',
+					width: 'calc(w + 16)',
+					height: 'calc(h + 16)',
+					fill: 'black',
+					stroke: 'none',
+					rx: 5,
+					ry: 5
+				},
+				labelText: {
+					textAnchor: 'middle',
+					textVerticalAnchor: 'middle'
+				}
 			},
-			labelText: {            
-			textAnchor: 'middle',
-			textVerticalAnchor: 'middle'
-			}
-		},
-		markup: [
-			{
-			tagName: 'rect',
-			selector: 'labelBody'
-			}, 
-			{
-			tagName: 'text',
-			selector: 'labelText'
-			}
-		],
+			markup: [
+				{
+					tagName: 'rect',
+					selector: 'labelBody'
+				},
+				{
+					tagName: 'text',
+					selector: 'labelText'
+				}
+			],
 		}
 	});
 	rect.addTo(graph);
@@ -581,10 +588,10 @@ function drawLines() {
 		let course = findCourseByTitle(title);
 		for (let j = 0; j < course.prereqs.length; j++) { // loop through all the prereqs for each course
 			for (let k = 0; k < courseCard.length; k++) { // loop through all the courses to find the course object that matches the prereq
-				if (courseCard[k].prop('title') === course.prereqs[j]) { 
+				if (courseCard[k].prop('title') === course.prereqs[j]) {
 					createFlow(courseCard[k], courseCard[i], "black");
 				}
-			}		
+			}
 		}
 	}
 	// Coreqs
@@ -596,26 +603,26 @@ function drawLines() {
 				if (courseCard[k].prop('title') === course.coreqs[j]) {
 					createFlow(courseCard[k], courseCard[i], "red");
 				}
-			}		
+			}
 		}
 	}
 }
 
 
-function showClasses(){
-	document.getElementById("myAccordion").style.display = ""; 
-	document.getElementById("electives").style.display = "none"; 
-	document.getElementById("placement").style.display = "none"; 
+function showClasses() {
+	document.getElementById("myAccordion").style.display = "";
+	document.getElementById("electives").style.display = "none";
+	document.getElementById("placement").style.display = "none";
 }
 
-function showEle(){
-	document.getElementById("myAccordion").style.display = "none"; 
-	document.getElementById("electives").style.display = ""; 
-	document.getElementById("placement").style.display = "none"; 
+function showEle() {
+	document.getElementById("myAccordion").style.display = "none";
+	document.getElementById("electives").style.display = "";
+	document.getElementById("placement").style.display = "none";
 }
 
-function showAP(){
-	document.getElementById("myAccordion").style.display = "none"; 
-	document.getElementById("electives").style.display = "none"; 
-	document.getElementById("placement").style.display = ""; 
+function showAP() {
+	document.getElementById("myAccordion").style.display = "none";
+	document.getElementById("electives").style.display = "none";
+	document.getElementById("placement").style.display = "";
 }
