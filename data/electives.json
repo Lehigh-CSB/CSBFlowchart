@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Professional",
+        "description": "Students may choose to use their CSB professional electives to develop concentrations in particular areas of computer science, business, or the intersection of these fields. It is not required that a student complete a track, just that students fulfill the 9-credit professional elective requirement.",
+        "link": "https://engineering.lehigh.edu/cse",
+        "credits": 9,
+        "note": "NOTE: You may also fulfill a track to concentrate in a particular field within computer science and/or business, see CSB Tracks for more information. These tracks are not required, and are just helpful guidelines. Many tracks also put you close to completing a minor in that field, so keep that in mind."
+    },
+    {
+        "title": "Technical",
+        "description": "In addition to all required CSE courses, all students must choose at least one CSE course from the list provided in the link above.",
+        "link": "https://engineering.lehigh.edu/cse",
+        "credits": 3,
+        "note": ""
+    },
+    {
+        "title": "Natural Sciences",
+        "description": "Twelve credits are required of courses designated as Natural Sciences (NS) by the course catalog. Additionally, at least one course must have an attached laboratory and two courses must be in a laboratory science with the first course as a prerequisite to the second course. There are some NS courses that, though in a laboratory science, do not include a laboratory; instead the “attached lab” has a separate course number. Check the link above for a partial list of sample science sequences.",
+        "link": "https://catalog.lehigh.edu/coursesprogramsandcurricula/artsandsciences/earthandenvironmentalsciences/",
+        "credits": 12,
+        "note": "NOTE: Not all of the courses are offered on a regular basis"
+    },
+    {
+        "title": "Humanities",
+        "description": "Six credits are required of courses designated as Humanities (HU) by the course catalog. If you intend to minor in a field in the humanities, it is recommended you tailor your electives accordingly!",
+        "link": "",
+        "credits": 6,
+        "note": ""
+    },
+    {
+        "title": "Social Sciences",
+        "description": "Three credits are required of courses designated as Social Sciences (SS) by the course catalog. If you intend to minor in a field in the social sciences, it is recommended you tailor your electives accordingly!",
+        "link": "",
+        "credits": 3,
+        "note": ""
+    },
+    {
+        "title": "Free",
+        "courseName": "",
+        "description": "Five (or four if your technical elective was four credits) credits are required that may be in any subject or field. Utilize these free credits to take courses that interest you or help you complete any minors you may have!",
+        "link": "",
+        "credits": 4,
+        "note": "NOTE: Any additional credits beyond the other requirements will spillover into the free elective requirement"
+    }
+]
