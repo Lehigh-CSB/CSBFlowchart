@@ -1,7 +1,7 @@
 [
   {
     "title": "BUS 003",
-    "description": "Business Communication I",
+    "description": "Business Communication I: Good business communication skills are essential for success on the job and career advancement. In this course, students are introduced to the frameworks and skills necessary to deliver communications that are professional, clear, concise, evidence-driven, and persuasive. Emphasis is on basic business communications including memos, reports, and presentations.",
     "credits": 1.5,
     "designation": "BUS",
     "completed": false,
@@ -14,7 +14,7 @@
   },
   {
     "title": "BUS 001",
-    "description": "Foundations of Business",
+    "description": "Foundations of Business: This course orients students in the College of Business to the study of business and to the college's expectations of undergraduates. Different types of business organizations and their goals are introduced, including overviews of the functional areas of business, their contributions to organizations, and their related careers. Students will begin to identify their professional interests, understand the wider context of business, and be exposed to the College of Business programs and resources available to support their academic and professional success.",
     "credits": 1,
     "designation": "BUS",
     "completed": false,
@@ -27,7 +27,7 @@
   },
   {
     "title": "BUS 203",
-    "description": "Business Communication II",
+    "description": "Business Communication II: This course builds on the basic communication frameworks and skills from BUS 003 to enhance students’ business communications related to data, particularly oral communication. Students will translate data and analysis into narratives that provide context for their messages and make persuasive recommendations in written and oral formats.",
     "credits": 1.5,
     "designation": "BUS",
     "completed": false,
@@ -40,7 +40,7 @@
   },
   {
     "title": "MKT 111",
-    "description": "Principles of Marketing",
+    "description": "Principles of Marketing: The purpose of this course is to give an overview of the entire marketing function. The objective is to take a broad-based approach to expose students to the meaning of marketing, the terminology of marketing, the activities involved in marketing, how managers make and implement decisions in marketing, and how they evaluate the results. The role of marketing in the broader society will also be discussed. At the end of this course, students will be able to understand the meaning of the marketing concept, various marketing terminologies, how firms develop and evaluate marketing strategies related to product, place, price, and promotions, how marketing strategies are related to other strategies of the firm, and what internal and external factors influence the marketing decisions. The outcome of the course will be assessed by a series of multiple choice and short essay questions, and other suitable assignments decided by the instructor.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -53,7 +53,7 @@
   },
   {
     "title": "LAW 201",
-    "description": "Legal Environment of Business",
+    "description": "Legal Environment of Business: This course examines the legal relationships between business and government, business and society, and the individual and society. A significant focus of the course is on the structure of the U.S. legal system, the role of the courts in the legal system, and contract law as the principal mechanism for the private allocation of resources and risk allocation. The course also focuses on business ethics with particular emphasis on corporate social responsibility. Junior standing is required.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -66,7 +66,7 @@
   },
   {
     "title": "BZX 002",
-    "description": "Student to Professional Co-Curriculum Tier 2",
+    "description": "Student to Professional Co-Curriculum Tier 2: The Student to Professional (STP) Co-Curriculum is a required, non-graded experience focused on academic success and professional preparation for all undergraduate students in business programs (BSBU, CSB, and IBE). In STP Tier 2, students gain understanding of basic professional development skills and resources through a small-group experience facilitated by faculty and staff volunteers, with the goal of providing equitable scaffolding to help students prepare for subsequent, more independent engagement in the sophomore-level co-curriculum.",
     "credits": 0,
     "designation": "BZX",
     "completed": false,
@@ -79,7 +79,7 @@
   },
   {
     "title": "ECO 001",
-    "description": "Principles of Economics",
+    "description": "Principles of Economics: A one-semester course in the principles of economics. General topics covered are: supply and demand; pricing and production decisions of firms; the role of government in the economy; the determination of national income; money and banking; monetary and fiscal policy; and government finance.",
     "credits": 4,
     "designation": "BUS",
     "completed": false,
@@ -92,7 +92,7 @@
   },
   {
     "title": "ACCT 151",
-    "description": "Introduction to Financial Accounting",
+    "description": "Introduction to Financial Accounting: The organization, measurement and interpretation of economic information. Introduction to accounting theory, concepts and principles, the accounting cycle, information processing, and financial statements. Exposure to controversial issues concerning income determination and valuation. Must have sophomore standing.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -105,7 +105,7 @@
   },
   {
     "title": "ACCT 152",
-    "description": "Introduction to Managerial Accounting",
+    "description": "Introduction to Managerial Accounting: An introduction to internal accounting information for all levels of management. Topics include cost flow in a manufacturing operation; planning, evaluating and controlling through budgeting and standard costing; and decision-making using cost-volume-profit analysis, direct costing, and relevant costs.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -118,7 +118,7 @@
   },
   {
     "title": "ECO 119/146",
-    "description": "Intermediate Micro/Macroeconomic Analysis",
+    "description": "Intermediate Micro/Macroeconomic Analysis: ECO 146: The application of economic analysis to managerial and public policy decision-making. Not available for credit to students who have taken ECO 105. ECO 119: Macroeconomic measurement, theory and policy. The use of alternative macroeconomic models to analyze the level of national income, inflation, unemployment, economic growth; the balance of payments, and exchange rate determination.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -131,7 +131,7 @@
   },
   {
     "title": "FIN 125",
-    "description": "Introduction to Finance",
+    "description": "Introduction to Finance: An introductory finance course that provides students with the basic finance skills and knowledge needed to undertake downstream courses in the finance major. Major topic areas will include time value of money, risk and return valuation of stocks and bonds, capital budgeting, cost of capital, and financial statement analysis.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -144,7 +144,7 @@
   },
   {
     "title": "SCM 186",
-    "description": "Supply Chain Operations Management",
+    "description": "Supply Chain Operations Management: Introduction to managing global supply chains and operations within the context of an integrated value chain. Topics include supply chain management, total quality management, project management, demand forecasting, supply management, lean operations, aggregate planning, capacity planning, inventory management, distribution and transportation management, and performance measurement.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -157,7 +157,7 @@
   },
   {
     "title": "MGT 043",
-    "description": "Organization Behavior",
+    "description": "Organization Behavior: Managers are needed to make organizations run effectively. Management is the art and science of helping individuals achieve goals together, often in organizations. This course provides a broad overview of the principles of effective, ethical management at the individual, interpersonal, and group levels of analysis. Emphasis is on conceptual and applied organizational behavior topics such as: individual differences; decision making; perception and judgment; motivation; leadership; delivering effective feedback and performance appraisal; managing diversity; power, politics and influence; and organizational culture.",
     "credits": 3,
     "designation": "BUS",
     "completed": false,
@@ -170,7 +170,7 @@
   },
   {
     "title": "MGT 301",
-    "description": "Strategic Management in a Global Environment",
+    "description": "Strategic Management in a Global Environment: The capstone business class, integrating concepts and practices from core business classes, utilizing an organization-wide, strategic perspective and examining the relationship among firm strategy, structure and environment. Course emphasizes strategic analysis, strategy formulation, and strategy implementation to achieve sustainable competitive advantage. Corporate governance, corporate social responsibility and business ethics are incorporated into the strategic perspective. Case analyses and competitive simulation game are central learning components. Senior standing in the College of Business and completion of college core.",
     "credits": 4,
     "designation": "BUS",
     "completed": false,
@@ -193,7 +193,7 @@
  
   {
     "title": "ECO 045/MATH 231",
-    "description": "Statistical Methods",
+    "description": "Statistical Methods/Probability and Statistics. Statistical Methods: Descriptive statistics, probability and probability distributions, sampling, estimation, hypothesis testing, chi-square tests, simple regression and correlation. Note: College of Business students may not take MATH 012 as a replacement for ECO 045. Probability and Statistics: Probability and distribution of random variables; populations and random sampling; chi-square and t distributions; estimation and tests of hypotheses; correlation and regression theory of two variables. Not available for credit to students who have completed both MATH 263 and MATH 264.",
     "credits": 3,
     "designation": "ECO",
     "completed": false,
@@ -206,7 +206,7 @@
   },
   {
     "title": "ENGL 001",
-    "description": "Critical Reading and Composition",
+    "description": "Critical Reading and Composition: Introduction to academic writing that supports a claim in respectful conversation with others. Topics drawn from important issues in the world in which students live. The course provides multiple opportunities to engage thoughtfully in the writing process. Students must receive a grade of C- or higher to advance to English 2.",
     "credits": 3,
     "designation": "ENGL",
     "completed": false,

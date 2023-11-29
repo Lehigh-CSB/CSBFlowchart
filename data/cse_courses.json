@@ -1,7 +1,7 @@
 [
   {
     "title": "CSE 007",
-    "description": "Introduction to Programming",
+    "description": "Introduction to Programming: Problem-solving using the Java programming language. Data types, control flow, methods, arrays, objects, inheritance, breadth of computing. Includes laboratory. If credit is given for CSE 007 then no credit will be given for CSE 003 nor CSE 004.",
     "credits": 4,
     "designation": "CSE",
     "completed": false,
@@ -14,7 +14,7 @@
   },
   {
     "title": "CSE 017",
-    "description": "Programming and Data Structures",
+    "description": "Programming and Data Structures: Algorithmic design and implementation in a high level, object oriented language, such as Java. Classes, subclasses, recursion, searching, sorting, linked lists, trees, stacks, queues.",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -27,7 +27,7 @@
   },
   {
     "title": "CSE 109",
-    "description": "Systems Software",
+    "description": "Systems Software: Advanced programming and data structures, including dynamic structures, memory allocation, data organization, symbol tables, hash tables, B-trees, data files. Object-oriented design and implementation of simple assemblers, loaders, interpreters, compilers, and translators. Practical methods for implementing medium-scale programs.",
     "credits": 4,
     "designation": "CSE",
     "completed": false,
@@ -40,7 +40,7 @@
   },
   {
     "title": "CSE 140",
-    "description": "Foundations of Discrete Structures and Algorithms",
+    "description": "Foundations of Discrete Structures and Algorithms: Basic representations used in algorithms: propositional and predicate logic, set operations and functions, relations and their representations, matrices and their representations, graphs and their representations, trees and their representations. Basic formalizations for proving algorithm correctness: logical consequences, induction, structural induction. Basic formalizations for algorithm analysis: counting, pigeonhole principle, permutations.",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -53,7 +53,7 @@
   },
   {
     "title": "CSE 202",
-    "description": "Computer Organization and Architecture",
+    "description": "Computer Organization and Architecture: Interaction between low-level computer architectural properties and high-level program behaviors: instruction set design; digital logic and assembly language; processor organization; the memory hierarchy; multicore and GPU architectures; and processor interrupt/exception models. Credit will not be given for both CSE 201 and CSE 202.",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -66,7 +66,7 @@
   },
   {
     "title": "CSE 216",
-    "description": "Software Engineering",
+    "description": "Software Engineering: The software lifecycle; lifecycle models; software planning; testing; specification methods; maintenance. Emphasis on team work and large-scale software systems, including oral presentations and written reports",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -79,7 +79,7 @@
   },
   {
     "title": "CSE 252",
-    "description": "Computers, Society, and the Internet",
+    "description": "Computers, Society, and the Internet: An interactive exploration of the current and future role of computers, the Internet, and related technologies in changing the standard of living, work environments, society and its ethical values. Privacy, security, depersonalization, responsibility, and professional ethics; the role of computer and Internet technologies in changing education, business modalities, collaboration mechanisms, and everyday life.",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -92,7 +92,7 @@
   },
   {
     "title": "CSE 262",
-    "description": "Programming Languages",
+    "description": "Programming Languages: Use, structure and implementation of several programming languages",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -105,7 +105,7 @@
   },
   {
     "title": "CSE 303",
-    "description": "Operating System Design",
+    "description": "Operating System Design: Process and thread programming models, management, and scheduling. Resource sharing and deadlocks. Memory management, including virtual memory and page replacement strategies. I/O issues in the operating system. File system implementation. Multiprocessing. Computer security as it impacts the operating system.",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -118,7 +118,7 @@
   },
   {
     "title": "CSE 340",
-    "description": "Design and Analysis of Algorithms",
+    "description": "Design and Analysis of Algorithms: Process and thread programming models, management, and scheduling. Resource sharing and deadlocks. Memory management, including virtual memory and page replacement strategies. I/O issues in the operating system. File system implementation. Multiprocessing. Computer security as it impacts the operating system.",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -131,7 +131,7 @@
   },
   {
     "title": "CSE 241/341",
-    "description": "Database Systems, Algorithms, and Applications",
+    "description": "Database Systems and Applications/Database Systems, Algorithms, and Applications. CSE 241: Design of large databases: Integration of databases and applications using SQL and JDBC; transaction processing; performance tuning; data mining and data warehouses. Not available to students who have credit for CSE 341 or ISE 224. CSE 341: Design of large databases; normalization; query languages (including SQL); Transaction-processing protocols; Query optimization; performance tuning; distributed systems. Not available to students who have credit for CSE 241.",
     "credits": 3,
     "designation": "CSE",
     "completed": false,
@@ -144,7 +144,7 @@
   },
   {
     "title": "CSB 311",
-    "description": "Computer Applications in Business",
+    "description": "Computer Applications in Business: Application of computer technology to accounting information systems. Transaction processing systems that support the revenue, conversion, and expenditure cycles of manufacturing, service, and retail business organizations. Topics include process modeling, data modeling, internal controls, corporate IT governance, IT audit techniques, SAP and application of Generalized Audit Software.",
     "credits": 3,
     "designation": "CSB",
     "completed": false,
@@ -157,7 +157,7 @@
   },
   {
     "title": "CSB 312",
-    "description": "Design of Integrated Business Applications I",
+    "description": "Design of Integrated Business Applications I: Integrated Product Development (IPD) Capstone I. Industry-based business information systems design project. Information systems design methodology, user needs analysis, project feasibility analysis of design alternatives, and integrated product development methodology. Formal oral and written presentations to clients.",
     "credits": 3,
     "designation": "CSB",
     "completed": false,
@@ -170,7 +170,7 @@
   },
   {
     "title": "CSB 313",
-    "description": "Design of Integrated Business Applications II",
+    "description": "Design of Integrated Business Applications II: Integrated Product Development (IPD) Capstone Course II. This course extends the industry-based project initiated in CSB 312 into its implementation phase. Detailed design, in-house system construction and delivery, commercial software options, and systems maintenance and support. The practical component of the course is supplemented by several classroom-based modules dealing with topics that lie at the boundary of computer science and business. Formal, oral, and written presentations to clients.",
     "credits": 3,
     "designation": "CSB",
     "completed": false,
